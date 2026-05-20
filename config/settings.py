@@ -57,7 +57,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://neondb_owner:npg_inzf72vcyNHa@ep-orange-forest-amna1g9f.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require',
+        default='postgresql://neondb_owner:npg_iElw4Vz3AZSU@ep-crimson-pond-amp6ql1i-pooler.c-5.us-east-1.aws.neon.tech/supreme_db?sslmode=require&channel_binding=require',
         conn_max_age=600,
     )
 }
