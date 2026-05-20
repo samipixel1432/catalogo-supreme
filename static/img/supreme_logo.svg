@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 120 1400 580">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 820">
   <!-- Red box -->
   <rect x="30" y="130" width="1400" height="560" fill="#ED1C24"/>
   <!-- Supreme text -->
   <text
     x="730"
-    y="530"
+    y="535"
     font-family="'Futura', 'Arial Black', Impact, sans-serif"
-    font-size="390"
+    font-size="380"
     font-weight="900"
     font-style="italic"
     fill="white"
     text-anchor="middle"
-    letter-spacing="-8"
+    letter-spacing="-5"
   >Supreme</text>
 </svg>
