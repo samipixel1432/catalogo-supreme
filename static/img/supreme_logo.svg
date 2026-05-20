@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 820" width="1460" height="820">
-  <!-- White background -->
-  <rect width="1460" height="820" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 120 1400 580">
   <!-- Red box -->
   <rect x="30" y="130" width="1400" height="560" fill="#ED1C24"/>
   <!-- Supreme text -->
