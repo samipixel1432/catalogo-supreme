@@ -13,14 +13,14 @@
       darkMode:"class",
       theme:{ extend:{
         colors:{
-          "primary":"#D4AF37","primary-fixed":"#F2CA50","on-primary":"#1A1200",
+          "primary":"#ED1C24","primary-fixed":"#FF3040","on-primary":"#FFFFFF",
           "secondary":"#c5c6ca","surface":"#121414",
           "surface-container":"#1e2020","surface-container-low":"#1a1c1c",
           "surface-container-lowest":"#0c0f0f","surface-container-high":"#282a2b",
           "surface-variant":"#333535","on-surface":"#e2e2e2",
           "on-surface-variant":"#d0c5af","background":"#121414",
           "outline":"#99907c","outline-variant":"#4d4635","tertiary":"#d0cdcd",
-          "dorado":"#D4AF37",
+          "dorado":"#ED1C24",
         },
         fontFamily:{"body-reg":["Inter"],"spec-mono":["Space Grotesk"],"headline-md":["Inter"]},
         fontSize:{
@@ -35,7 +35,7 @@
   <style>
     .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;vertical-align:middle;}
     input{background:#1e2020!important;color:#e2e2e2!important;border:none!important;border-bottom:1px solid #d0cdcd!important;border-radius:0!important;padding:10px 0!important;}
-    input:focus{outline:none!important;border-bottom-color:#D4AF37!important;box-shadow:none!important;}
+    input:focus{outline:none!important;border-bottom-color:#ED1C24!important;box-shadow:none!important;}
     input::placeholder{color:#47494d;}
   </style>
 </head>
@@ -47,14 +47,14 @@
   </div>
   <!-- Grid sutil -->
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
-       style="background-image:linear-gradient(to right,#D4AF37 1px,transparent 1px),linear-gradient(to bottom,#D4AF37 1px,transparent 1px);background-size:32px 32px;"></div>
+       style="background-image:linear-gradient(to right,#ED1C24 1px,transparent 1px),linear-gradient(to bottom,#ED1C24 1px,transparent 1px);background-size:32px 32px;"></div>
 
   <main class="relative z-10 w-full max-w-[440px] flex flex-col gap-8 py-12">
 
     <!-- Logo + volver -->
     <div class="flex flex-col items-center gap-4">
       <a href="{% url 'catalogo:landing' %}">
-        <img src="{% static 'img/logo.png' %}" alt="Supreme Store"
+        <img src="{% static 'img/supreme_logo.svg' %}" alt="Supreme Store"
              class="w-28 h-28 object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.25)] hover:scale-105 transition-transform"/>
       </a>
       <h1 class="font-headline-md text-headline-md text-on-surface tracking-widest uppercase text-center">

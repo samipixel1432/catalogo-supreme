@@ -1,6 +1,6 @@
 {% extends "panel/base_panel.html" %}
 {% block title %}{{ titulo }}{% endblock %}
-{% block nav_nuevo %}text-[#d4af37] bg-[#1e2020]{% endblock %}
+{% block nav_nuevo %}text-[#ED1C24] bg-[#1e2020]{% endblock %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
     <span class="material-symbols-outlined">arrow_back</span>
   </a>
   <div>
-    <p class="sg text-xs text-[#d4af37] uppercase tracking-widest mb-0.5">Panel Admin</p>
+    <p class="sg text-xs text-[#ED1C24] uppercase tracking-widest mb-0.5">Panel Admin</p>
     <h1 class="text-xl font-black uppercase tracking-tight">{{ titulo }}</h1>
   </div>
 </div>
@@ -44,7 +44,7 @@
       <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Categoría</label>
       {{ form.categoria }}
       <a href="{% url 'catalogo:panel_categoria_nueva' %}"
-         class="sg text-[11px] text-[#d4af37] hover:underline uppercase tracking-widest mt-1 inline-block">
+         class="sg text-[11px] text-[#ED1C24] hover:underline uppercase tracking-widest mt-1 inline-block">
         + Nueva categoría
       </a>
       {% if form.categoria.errors %}
@@ -102,7 +102,7 @@
       {% endif %}
 
       <!-- Subir nuevas (múltiples) -->
-      <div class="border border-dashed border-[#333535] hover:border-[#d4af37] transition-colors p-5 cursor-pointer"
+      <div class="border border-dashed border-[#333535] hover:border-[#ED1C24] transition-colors p-5 cursor-pointer"
            onclick="document.getElementById('id_imagenes_nuevas').click()">
         <input type="file" name="imagenes_nuevas" accept="image/*" id="id_imagenes_nuevas"
                multiple class="hidden" onchange="mostrarArchivos(this)"/>
@@ -140,7 +140,7 @@
   <!-- Botones -->
   <div class="flex items-center gap-4 mt-8 border-t border-[#333535] pt-6">
     <button type="submit"
-            class="sg bg-[#d4af37] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-8 py-3.5 hover:bg-[#e9c349] transition-colors flex items-center gap-2">
+            class="sg bg-[#ED1C24] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-8 py-3.5 hover:bg-[#e9c349] transition-colors flex items-center gap-2">
       <span class="material-symbols-outlined text-base">save</span>
       {{ accion }}
     </button>
@@ -165,13 +165,13 @@
     if (input.files && input.files.length > 0) {
       const nombres = Array.from(input.files).map(f => f.name).join(', ');
       label.textContent = '✓ ' + input.files.length + ' foto(s): ' + nombres;
-      label.style.color = '#d4af37';
+      label.style.color = '#ED1C24';
     }
   }
   /* Aplicar estilos inline a los widgets de Django */
   document.querySelectorAll('input[type="text"], input[type="number"], input[type="url"], textarea, select').forEach(el => {
     el.style.cssText = 'width:100%;padding:10px 14px;background:#1e2020;color:#e2e2e2;border:1px solid #333535;border-radius:0;font-family:inherit;font-size:14px;';
-    el.addEventListener('focus', () => el.style.borderColor = '#d4af37');
+    el.addEventListener('focus', () => el.style.borderColor = '#ED1C24');
     el.addEventListener('blur', () => el.style.borderColor = '#333535');
   });
 </script>

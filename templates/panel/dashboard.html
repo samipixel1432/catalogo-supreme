@@ -1,17 +1,17 @@
 {% extends "panel/base_panel.html" %}
 {% block title %}Dashboard{% endblock %}
-{% block nav_productos %}text-[#d4af37] bg-[#1e2020]{% endblock %}
+{% block nav_productos %}text-[#ED1C24] bg-[#1e2020]{% endblock %}
 
 {% block content %}
 
 <!-- Header -->
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
   <div>
-    <p class="sg text-xs text-[#d4af37] uppercase tracking-widest mb-1">Panel de Administración</p>
+    <p class="sg text-xs text-[#ED1C24] uppercase tracking-widest mb-1">Panel de Administración</p>
     <h1 class="text-2xl font-black uppercase tracking-tight">Productos <span class="text-[#47494d]">({{ total }})</span></h1>
   </div>
   <a href="{% url 'catalogo:panel_producto_nuevo' %}"
-     class="sg flex items-center gap-2 bg-[#d4af37] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-6 py-3 hover:bg-[#e9c349] transition-colors self-start">
+     class="sg flex items-center gap-2 bg-[#ED1C24] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-6 py-3 hover:bg-[#e9c349] transition-colors self-start">
     <span class="material-symbols-outlined text-base">add</span>
     Nuevo producto
   </a>
@@ -21,7 +21,7 @@
 <form method="get" class="flex items-center bg-[#1e2020] border border-[#333535] mb-6 max-w-md">
   <input name="q" type="text" value="{{ busqueda }}" placeholder="Buscar producto..."
          class="flex-1 px-4 py-2.5 sg text-sm border-none !border-0 !border-transparent focus:!border-transparent"/>
-  <button type="submit" class="px-4 text-[#c5c6ca] hover:text-[#d4af37] transition-colors">
+  <button type="submit" class="px-4 text-[#c5c6ca] hover:text-[#ED1C24] transition-colors">
     <span class="material-symbols-outlined text-lg">search</span>
   </button>
   {% if busqueda %}
@@ -77,7 +77,7 @@
 
         <!-- Precio -->
         <td class="px-4 py-3 hidden md:table-cell">
-          <span class="sg text-sm font-semibold text-[#d4af37]">{{ producto.precio_formateado }}</span>
+          <span class="sg text-sm font-semibold text-[#ED1C24]">{{ producto.precio_formateado }}</span>
         </td>
 
         <!-- Disponible -->
@@ -92,7 +92,7 @@
         <!-- Destacado -->
         <td class="px-4 py-3 text-center hidden lg:table-cell">
           {% if producto.destacado %}
-            <span class="material-symbols-outlined text-[#d4af37] text-lg" style="font-variation-settings:'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-[#ED1C24] text-lg" style="font-variation-settings:'FILL' 1">star</span>
           {% else %}
             <span class="material-symbols-outlined text-[#47494d] text-lg">star</span>
           {% endif %}
@@ -106,7 +106,7 @@
               <span class="material-symbols-outlined text-lg">open_in_new</span>
             </a>
             <a href="{% url 'catalogo:panel_producto_editar' producto.pk %}"
-               class="text-[#c5c6ca] hover:text-[#d4af37] transition-colors" title="Editar">
+               class="text-[#c5c6ca] hover:text-[#ED1C24] transition-colors" title="Editar">
               <span class="material-symbols-outlined text-lg">edit</span>
             </a>
             <a href="{% url 'catalogo:panel_producto_eliminar' producto.pk %}"
@@ -123,7 +123,7 @@
             {% if busqueda %}No hay resultados para "{{ busqueda }}"{% else %}Aún no hay productos{% endif %}
           </p>
           <a href="{% url 'catalogo:panel_producto_nuevo' %}"
-             class="sg inline-block mt-4 text-xs text-[#d4af37] hover:underline uppercase tracking-widest">
+             class="sg inline-block mt-4 text-xs text-[#ED1C24] hover:underline uppercase tracking-widest">
             + Crear el primero
           </a>
         </td>
@@ -139,7 +139,7 @@
   <div class="flex items-center justify-between mb-4">
     <p class="sg text-xs text-[#c5c6ca] uppercase tracking-widest">Categorías ({{ categorias|length }})</p>
     <a href="{% url 'catalogo:panel_categoria_nueva' %}"
-       class="sg text-xs text-[#d4af37] hover:underline uppercase tracking-widest flex items-center gap-1">
+       class="sg text-xs text-[#ED1C24] hover:underline uppercase tracking-widest flex items-center gap-1">
       <span class="material-symbols-outlined text-sm">add</span> Nueva
     </a>
   </div>

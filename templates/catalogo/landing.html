@@ -16,8 +16,8 @@
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="Supreme Store" />
   <meta property="og:title"       content="Supreme Store" />
-  <meta property="og:description" content="Productos de calidad para el hogar, belleza, cocina y más. Precios directos de bodega." />
-  <meta property="og:image"       content="https://catalogosam-hxxq.vercel.app/static/img/logo.png" />
+  <meta property="og:description" content="Zapatos para toda la familia. Tenis, botas, sandalias y más. Precios directos, calidad garantizada." />
+  <meta property="og:image"       content="https://catalogosam-hxxq.vercel.app/static/img/supreme_logo.svg" />
   <meta property="og:url"         content="https://catalogosam-hxxq.vercel.app/" />
   <meta name="twitter:card"       content="summary" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -47,7 +47,7 @@
           "on-background":        "var(--on-background)",
           "outline":              "var(--outline)",
           "outline-variant":      "var(--outline-variant)",
-          "dorado":               "#D4AF37",
+          "dorado":               "#ED1C24",
         },
         fontFamily:{ "body-reg":["Inter"],"spec-mono":["Space Grotesk"],"headline-md":["Inter"],"display-lg":["Inter"] },
         fontSize:{
@@ -62,9 +62,9 @@
   </script>
   <style>
     :root {
-      --primary:              #C9A020;
-      --primary-fixed:        #E8C030;
-      --on-primary:           #1A1200;
+      --primary:              #C01018;
+      --primary-fixed:        #FF2530;
+      --on-primary:           #FFFFFF;
       --secondary:            #3E3C36;
       --surface:              #F5F2EA;
       --surface-container-lowest: #FDFCF8;
@@ -85,11 +85,11 @@
       --grid-opacity:         0.09;
     }
     .dark {
-      --primary:              #D4AF37;
-      --primary-container:    #B8960C;
-      --primary-fixed:        #F2CA50;
-      --primary-fixed-dim:    #C9A020;
-      --on-primary:           #1A1200;
+      --primary:              #ED1C24;
+      --primary-container:    #B01020;
+      --primary-fixed:        #FF3040;
+      --primary-fixed-dim:    #C01018;
+      --on-primary:           #FFFFFF;
       --secondary:            #c5c6ca;
       --surface:              #121414;
       --surface-container-lowest: #0c0f0f;
@@ -124,7 +124,7 @@
 
   <!-- NAV -->
   <header class="fixed top-0 w-full z-50 nav-glass border-b border-outline-variant flex items-center justify-between px-6 h-16">
-    <img src="{% static 'img/logo.png' %}" alt="Supreme" class="h-9 w-auto"/>
+    <img src="{% static 'img/supreme_logo.svg' %}" alt="Supreme" class="h-9 w-auto"/>
     <div class="flex items-center gap-4">
       <a href="{% url 'catalogo:coleccion' %}"
          class="hidden md:block font-spec-mono text-spec-mono text-secondary hover:text-dorado uppercase tracking-widest transition-colors">
@@ -151,13 +151,13 @@
     </div>
     <!-- Patrón grid sutil -->
     <div class="absolute inset-0 pointer-events-none"
-         style="opacity:var(--grid-opacity);background-image:linear-gradient(to right,#D4AF37 1px,transparent 1px),linear-gradient(to bottom,#D4AF37 1px,transparent 1px);background-size:40px 40px;"></div>
+         style="opacity:var(--grid-opacity);background-image:linear-gradient(to right,#ED1C24 1px,transparent 1px),linear-gradient(to bottom,#ED1C24 1px,transparent 1px);background-size:40px 40px;"></div>
 
     <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto pt-24 pb-16">
 
       <div class="mb-8 fade-up">
-        <img src="{% static 'img/logo.png' %}" alt="Supreme Store"
-             class="w-40 h-40 md:w-52 md:h-52 object-contain mx-auto drop-shadow-[0_0_40px_rgba(212,175,55,0.3)]"/>
+        <img src="{% static 'img/supreme_logo.svg' %}" alt="Supreme Store"
+             class="w-40 h-40 md:w-52 md:h-52 object-contain mx-auto drop-shadow-[0_0_40px_rgba(237,28,36,0.3)]"/>
       </div>
 
       <div class="mb-6 fade-up-2">
@@ -172,8 +172,8 @@
       <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-[0.35em] mb-6 fade-up-2">Catálogo</p>
 
       <p class="font-body-reg text-body-reg text-on-surface-variant max-w-xl mb-10 fade-up-3">
-        Productos de calidad para el hogar, belleza, cocina y más.<br>
-        Precios directos de bodega. Atención personalizada.
+        Zapatos para toda la familia. Tenis, botas, sandalias y más.<br>
+        Precios directos. Calidad garantizada en cada par.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 w-full max-w-sm fade-up-3">
@@ -200,7 +200,7 @@
     <div class="flex items-start gap-4 border-l-2 border-dorado pl-5 mb-14">
       <div>
         <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">El Estándar Supreme</h2>
-        <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mt-1">Calidad garantizada en cada producto</p>
+        <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mt-1">Calidad garantizada en cada par</p>
       </div>
     </div>
 
@@ -212,7 +212,7 @@
         </div>
         <h3 class="text-on-surface font-bold uppercase mb-stack-sm tracking-wide">Calidad Garantizada</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed flex-1">
-          Cada producto pasa por control de calidad antes de llegar a tu puerta. Respaldo directo de la bodega importadora.
+          Cada par pasa por control de calidad antes de llegar a tus manos. Materiales duraderos y acabados de primera.
         </p>
         <div class="border-t border-surface-container-high mt-auto pt-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <span class="font-spec-mono text-[10px] text-secondary uppercase tracking-widest">CAL: QC-01</span>
@@ -224,12 +224,12 @@
         <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-stack-lg border card-border group-hover:border-dorado/40 transition-colors">
           <span class="material-symbols-outlined text-dorado">local_shipping</span>
         </div>
-        <h3 class="text-on-surface font-bold uppercase mb-stack-sm tracking-wide">Precios de Bodega</h3>
+        <h3 class="text-on-surface font-bold uppercase mb-stack-sm tracking-wide">Amplio Catálogo</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed flex-1">
-          Sin intermediarios. Comprás directamente de nuestra bodega importadora con los mejores precios del mercado.
+          Tenis, botas, sandalias, zapatillas y más. Tallas para hombre, mujer y niños. Siempre con los mejores precios.
         </p>
         <div class="border-t border-surface-container-high mt-auto pt-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
-          <span class="font-spec-mono text-[10px] text-secondary uppercase tracking-widest">DIST: BD-02</span>
+          <span class="font-spec-mono text-[10px] text-secondary uppercase tracking-widest">CAT: ZP-02</span>
           <span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
         </div>
       </div>
@@ -240,7 +240,7 @@
         </div>
         <h3 class="text-on-surface font-bold uppercase mb-stack-sm tracking-wide">Atención Directa</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed flex-1">
-          Cotizaciones personalizadas, pedidos al por mayor y atención inmediata por WhatsApp. Respuesta en menos de 24 horas.
+          Pedidos al por mayor, tallas especiales y asesoría personalizada por WhatsApp. Respuesta en menos de 24 horas.
         </p>
         <div class="border-t border-surface-container-high mt-auto pt-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <span class="font-spec-mono text-[10px] text-secondary uppercase tracking-widest">ATN: WA-03</span>
@@ -253,7 +253,7 @@
   <!-- CTA FINAL -->
   <section class="border-t border-surface-variant bg-surface-container-lowest py-20">
     <div class="max-w-2xl mx-auto px-6 text-center flex flex-col items-center gap-6">
-      <img src="{% static 'img/logo.png' %}" alt="Supreme" class="w-16 h-16 object-contain opacity-80"/>
+      <img src="{% static 'img/supreme_logo.svg' %}" alt="Supreme" class="w-16 h-16 object-contain opacity-90"/>
       <h2 class="font-headline-md text-headline-md text-on-surface">¿Listo para explorar el catálogo?</h2>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="{% url 'catalogo:coleccion' %}"
