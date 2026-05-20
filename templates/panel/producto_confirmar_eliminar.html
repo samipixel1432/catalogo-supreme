@@ -1,0 +1,36 @@
+{% extends "panel/base_panel.html" %}
+{% block title %}Eliminar producto{% endblock %}
+
+{% block content %}
+
+<div class="max-w-lg mx-auto text-center py-10">
+  <span class="material-symbols-outlined text-6xl text-red-400 mb-6 block">delete_forever</span>
+  <p class="sg text-xs text-[#d4af37] uppercase tracking-widest mb-2">Confirmar eliminación</p>
+  <h1 class="text-2xl font-black uppercase tracking-tight mb-4">{{ producto.nombre }}</h1>
+  <p class="sg text-sm text-[#c5c6ca] mb-8">
+    Esta acción es permanente y no se puede deshacer.<br>
+    ¿Seguro que quieres eliminar este producto?
+  </p>
+
+  {% if producto.get_imagen_url %}
+  <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+       class="w-32 h-32 object-cover border border-[#333535] mx-auto mb-8 opacity-60"/>
+  {% endif %}
+
+  <div class="flex items-center justify-center gap-4">
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit"
+              class="sg bg-red-800 text-red-100 font-bold uppercase tracking-widest text-xs px-8 py-3.5 hover:bg-red-700 transition-colors flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">delete</span>
+        Sí, eliminar
+      </button>
+    </form>
+    <a href="{% url 'catalogo:panel_dashboard' %}"
+       class="sg border border-[#333535] text-[#c5c6ca] uppercase tracking-widest text-xs px-8 py-3.5 hover:border-[#c5c6ca] transition-colors">
+      Cancelar
+    </a>
+  </div>
+</div>
+
+{% endblock %}

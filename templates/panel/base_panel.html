@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+    (function(){
+      var t=localStorage.getItem('supreme-tema');
+      var dark=t==='oscuro'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark',dark);
+    })();
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Panel Admin{% endblock %} — Supreme</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --p-bg:          #F3F3EE;
+      --p-surface:     #FFFFFF;
+      --p-sidebar:     #F9F9F4;
+      --p-border:      #E0DDD5;
+      --p-text:        #1A1A18;
+      --p-muted:       #5C5D61;
+      --p-input-bg:    #EDEDEA;
+      --p-header-bg:   rgba(249,249,244,0.95);
+      --p-hover-bg:    #EDEDEA;
+      --p-dorado:      #D4AF37;
+      --p-dorado-dim:  #B8960C;
+    }
+    .dark {
+      --p-bg:          #121414;
+      --p-surface:     #1e2020;
+      --p-sidebar:     #0c0f0f;
+      --p-border:      #333535;
+      --p-text:        #e2e2e2;
+      --p-muted:       #c5c6ca;
+      --p-input-bg:    #1e2020;
+      --p-header-bg:   rgba(12,15,15,0.95);
+      --p-hover-bg:    #1e2020;
+      --p-dorado:      #d4af37;
+      --p-dorado-dim:  #F2CA50;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--p-bg);
+      color: var(--p-text);
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300; vertical-align: middle; }
+    .sg { font-family: 'Space Grotesk', sans-serif; }
+    input, select, textarea {
+      background: var(--p-input-bg) !important;
+      color: var(--p-text) !important;
+      border: 1px solid var(--p-border) !important;
+      border-radius: 0 !important;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none !important;
+      border-color: var(--p-dorado) !important;
+      box-shadow: none !important;
+    }
+    input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--p-dorado); }
+    select option { background: var(--p-input-bg); color: var(--p-text); }
+    .p-header  { background: var(--p-header-bg); backdrop-filter: blur(16px); border-bottom: 1px solid var(--p-border); }
+    .p-sidebar { background: var(--p-sidebar); border-right: 1px solid var(--p-border); }
+    .p-nav-link { color: var(--p-muted); }
+    .p-nav-link:hover, .p-nav-link.active { color: var(--p-dorado); background: var(--p-hover-bg); }
+    .p-mobile-nav { background: var(--p-sidebar); border-top: 1px solid var(--p-border); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top bar -->
+  <header class="p-header fixed top-0 left-0 right-0 z-50 h-14 flex items-center px-4 md:px-8 gap-4">
+    <span class="text-base font-black tracking-[0.2em] uppercase mr-2" style="color:var(--p-text)">SUPREME</span>
+    <span class="sg text-xs uppercase tracking-widest border px-2 py-0.5" style="color:var(--p-dorado);border-color:var(--p-dorado);opacity:0.6">Admin</span>
+    <div class="flex-1"></div>
+    <a href="/" target="_blank"
+       class="sg text-xs uppercase tracking-widest transition-colors flex items-center gap-1"
+       style="color:var(--p-muted)" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--p-dorado')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--p-muted')">
+      <span class="material-symbols-outlined text-sm">open_in_new</span>
+      Ver sitio
+    </a>
+    <!-- Toggle tema -->
+    <button onclick="toggleTema()" title="Cambiar tema"
+            class="transition-colors flex items-center"
+            style="color:var(--p-muted)">
+      <span id="theme-icon" class="material-symbols-outlined text-xl">light_mode</span>
+    </button>
+    <a href="{% url 'catalogo:panel_logout' %}"
+       class="sg text-xs uppercase tracking-widest transition-colors flex items-center gap-1"
+       style="color:var(--p-muted)" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--p-muted')">
+      <span class="material-symbols-outlined text-sm">logout</span>
+      Salir
+    </a>
+  </header>
+
+  <!-- Sidebar + contenido -->
+  <div class="flex flex-1 pt-14">
+    <!-- Sidebar -->
+    <aside class="p-sidebar hidden md:flex flex-col w-56 fixed top-14 bottom-0 left-0 px-4 py-6 gap-1">
+      <a href="{% url 'catalogo:panel_dashboard' %}"
+         class="p-nav-link sg flex items-center gap-2 px-3 py-2.5 text-xs uppercase tracking-widest transition-colors
+                {% block nav_productos %}{% endblock %}">
+        <span class="material-symbols-outlined text-lg">inventory_2</span>
+        Productos
+      </a>
+      <a href="{% url 'catalogo:panel_producto_nuevo' %}"
+         class="p-nav-link sg flex items-center gap-2 px-3 py-2.5 text-xs uppercase tracking-widest transition-colors
+                {% block nav_nuevo %}{% endblock %}">
+        <span class="material-symbols-outlined text-lg">add_box</span>
+        Nuevo producto
+      </a>
+      <a href="{% url 'catalogo:panel_categoria_nueva' %}"
+         class="p-nav-link sg flex items-center gap-2 px-3 py-2.5 text-xs uppercase tracking-widest transition-colors
+                {% block nav_categoria %}{% endblock %}">
+        <span class="material-symbols-outlined text-lg">category</span>
+        Nueva categoría
+      </a>
+      <div class="flex-1"></div>
+      <div class="pt-4" style="border-top:1px solid var(--p-border)">
+        <p class="sg text-[10px] uppercase tracking-widest px-3" style="color:var(--p-border)">{{ user.username }}</p>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 md:ml-56 px-4 md:px-8 py-8">
+
+      {% for msg in messages %}
+      <div class="flex items-center gap-2 mb-6 px-4 py-3 border sg text-sm
+                  {% if msg.tags == 'success' %}bg-green-500/10 border-green-500/30 text-green-600 dark:text-green-300
+                  {% else %}bg-red-500/10 border-red-500/30 text-red-600 dark:text-red-300{% endif %}">
+        <span class="material-symbols-outlined text-base">
+          {% if msg.tags == 'success' %}check_circle{% else %}error{% endif %}
+        </span>
+        {{ msg }}
+      </div>
+      {% endfor %}
+
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <!-- Nav móvil -->
+  <nav class="p-mobile-nav md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around py-2">
+    <a href="{% url 'catalogo:panel_dashboard' %}" class="p-nav-link flex flex-col items-center py-1 transition-colors">
+      <span class="material-symbols-outlined text-xl">inventory_2</span>
+      <span class="sg text-[9px] uppercase tracking-wider mt-0.5">Productos</span>
+    </a>
+    <a href="{% url 'catalogo:panel_producto_nuevo' %}" class="p-nav-link flex flex-col items-center py-1 transition-colors">
+      <span class="material-symbols-outlined text-xl">add_box</span>
+      <span class="sg text-[9px] uppercase tracking-wider mt-0.5">Nuevo</span>
+    </a>
+    <a href="{% url 'catalogo:panel_categoria_nueva' %}" class="p-nav-link flex flex-col items-center py-1 transition-colors">
+      <span class="material-symbols-outlined text-xl">category</span>
+      <span class="sg text-[9px] uppercase tracking-wider mt-0.5">Categoría</span>
+    </a>
+    <button onclick="toggleTema()" class="p-nav-link flex flex-col items-center py-1 transition-colors">
+      <span id="theme-icon-mobile" class="material-symbols-outlined text-xl">light_mode</span>
+      <span class="sg text-[9px] uppercase tracking-wider mt-0.5">Tema</span>
+    </button>
+    <a href="{% url 'catalogo:panel_logout' %}" class="p-nav-link flex flex-col items-center py-1 transition-colors hover:!text-red-400">
+      <span class="material-symbols-outlined text-xl">logout</span>
+      <span class="sg text-[9px] uppercase tracking-wider mt-0.5">Salir</span>
+    </a>
+  </nav>
+
+  <script>
+    function toggleTema() {
+      var html = document.documentElement;
+      var esDark = html.classList.toggle('dark');
+      localStorage.setItem('supreme-tema', esDark ? 'oscuro' : 'claro');
+      actualizarIcono(esDark);
+    }
+    function actualizarIcono(esDark) {
+      var icono = esDark ? 'light_mode' : 'dark_mode';
+      var d = document.getElementById('theme-icon');
+      var m = document.getElementById('theme-icon-mobile');
+      if (d) d.textContent = icono;
+      if (m) m.textContent = icono;
+    }
+    actualizarIcono(document.documentElement.classList.contains('dark'));
+  </script>
+
+</body>
+</html>

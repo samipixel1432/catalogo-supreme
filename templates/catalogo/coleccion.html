@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if categoria_activa %}{{ categoria_activa.nombre }} — {% endif %}Catálogo — Supreme
+{% endblock %}
+
+{% block content %}
+
+<!-- ENCABEZADO -->
+<section class="border-b border-surface-variant bg-surface-container-lowest py-10 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <p class="font-spec-mono text-spec-mono text-dorado uppercase tracking-widest mb-2">
+      {% if categoria_activa %}{{ categoria_activa.nombre }}{% else %}Colección Completa{% endif %}
+    </p>
+    <h1 class="font-display-lg text-display-lg text-on-surface uppercase tracking-tight">
+      {% if busqueda %}
+        "{{ busqueda }}"
+      {% elif categoria_activa %}
+        {{ categoria_activa.nombre }}
+      {% else %}
+        Catálogo
+      {% endif %}
+    </h1>
+    <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mt-3">
+      {{ total_resultados }} producto{% if total_resultados != 1 %}s{% endif %} encontrado{% if total_resultados != 1 %}s{% endif %}
+    </p>
+  </div>
+</section>
+
+<!-- BÚSQUEDA -->
+<section class="border-b border-surface-variant bg-surface py-4 px-4 md:px-8 sticky top-[64px] z-40 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto">
+    <form action="{% url 'catalogo:coleccion' %}" method="get" class="flex items-center bg-surface-container border border-outline-variant max-w-sm">
+      <input name="q" type="text" value="{{ busqueda }}" placeholder="Buscar..."
+             class="bg-transparent text-on-surface placeholder-secondary px-4 py-2.5 font-spec-mono text-spec-mono outline-none w-full" />
+      <button type="submit" class="px-3 text-secondary hover:text-dorado transition-colors">
+        <span class="material-symbols-outlined text-lg">search</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- GRID DE PRODUCTOS -->
+<section class="max-w-7xl mx-auto px-2 md:px-8 py-6 md:py-10">
+  {% if productos %}
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 auto-rows-fr">
+    {% for producto in productos %}
+    <article class="bg-surface-container border border-surface-variant flex flex-col group hover:border-dorado/40 transition-colors duration-300">
+      <a href="{{ producto.get_absolute_url }}" class="flex flex-col h-full">
+
+        <!-- Imagen -->
+        <div class="relative overflow-hidden aspect-square bg-surface-container-high flex-shrink-0">
+          {% if producto.get_imagen_url %}
+            <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          {% else %}
+            <div class="w-full h-full flex flex-col items-center justify-center gap-2 bg-surface-container">
+              <span class="text-3xl md:text-4xl text-surface-variant font-black">{{ producto.nombre|first|upper }}</span>
+              {% if producto.categoria %}
+                <span class="font-spec-mono text-[10px] text-secondary uppercase tracking-widest text-center px-2">{{ producto.categoria.nombre }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if producto.destacado %}
+          <div class="absolute top-2 left-2 bg-dorado text-on-primary font-spec-mono uppercase px-2 py-0.5 text-[9px] md:text-[11px] tracking-widest">
+            Destacado
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Info -->
+        <div class="p-2 md:p-4 flex flex-col flex-grow border-t border-surface-variant bg-surface">
+          {% if producto.categoria %}
+            <p class="font-spec-mono text-[9px] md:text-spec-mono text-secondary uppercase tracking-widest mb-0.5 truncate">{{ producto.categoria.nombre }}</p>
+          {% endif %}
+          <h2 class="text-on-surface font-semibold text-xs md:text-sm leading-snug flex-grow line-clamp-2 group-hover:text-dorado transition-colors">
+            {{ producto.nombre }}
+          </h2>
+          {% if producto.referencia %}
+            <p class="font-spec-mono text-[9px] md:text-spec-mono text-secondary uppercase tracking-widest mt-0.5 hidden md:block">Ref: {{ producto.referencia }}</p>
+          {% endif %}
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-dorado font-bold text-sm md:text-base">{{ producto.precio_formateado }}</span>
+            <span class="text-secondary group-hover:text-dorado transition-colors">
+              <span class="material-symbols-outlined text-base md:text-lg">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <!-- Sin resultados -->
+  <div class="flex flex-col items-center justify-center py-32 gap-6 text-center">
+    <span class="material-symbols-outlined text-6xl text-surface-variant">search_off</span>
+    <div>
+      <p class="font-headline-md text-headline-md text-on-surface">Sin resultados</p>
+      <p class="font-body-reg text-body-reg text-on-surface-variant mt-2">
+        No encontramos productos que coincidan con tu búsqueda.
+      </p>
+    </div>
+    <a href="{% url 'catalogo:coleccion' %}"
+       class="border border-outline-variant text-on-surface font-spec-mono text-spec-mono uppercase tracking-widest px-8 py-3 hover:border-dorado hover:text-dorado transition-colors">
+      Ver todo el catálogo
+    </a>
+  </div>
+  {% endif %}
+</section>
+
+{% endblock %}

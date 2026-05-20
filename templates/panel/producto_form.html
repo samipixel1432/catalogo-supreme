@@ -1,0 +1,179 @@
+{% extends "panel/base_panel.html" %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block nav_nuevo %}text-[#d4af37] bg-[#1e2020]{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<div class="flex items-center gap-4 mb-8">
+  <a href="{% url 'catalogo:panel_dashboard' %}"
+     class="text-[#47494d] hover:text-[#c5c6ca] transition-colors">
+    <span class="material-symbols-outlined">arrow_back</span>
+  </a>
+  <div>
+    <p class="sg text-xs text-[#d4af37] uppercase tracking-widest mb-0.5">Panel Admin</p>
+    <h1 class="text-xl font-black uppercase tracking-tight">{{ titulo }}</h1>
+  </div>
+</div>
+
+<form method="post" enctype="multipart/form-data" class="max-w-3xl">
+  {% csrf_token %}
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Nombre -->
+    <div class="md:col-span-2">
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Nombre del producto *</label>
+      {{ form.nombre }}
+      {% if form.nombre.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.nombre.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Referencia -->
+    <div>
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Referencia</label>
+      {{ form.referencia }}
+      {% if form.referencia.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.referencia.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Categoría -->
+    <div>
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Categoría</label>
+      {{ form.categoria }}
+      <a href="{% url 'catalogo:panel_categoria_nueva' %}"
+         class="sg text-[11px] text-[#d4af37] hover:underline uppercase tracking-widest mt-1 inline-block">
+        + Nueva categoría
+      </a>
+      {% if form.categoria.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.categoria.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Precio -->
+    <div>
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Precio (dejar vacío = "Consultar precio")</label>
+      {{ form.precio }}
+      {% if form.precio.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.precio.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Descripción corta -->
+    <div>
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Descripción corta</label>
+      {{ form.descripcion_corta }}
+      {% if form.descripcion_corta.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.descripcion_corta.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Descripción completa -->
+    <div class="md:col-span-2">
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-2">Descripción completa</label>
+      {{ form.descripcion }}
+      {% if form.descripcion.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.descripcion.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Fotos del producto -->
+    <div class="md:col-span-2">
+      <label class="sg block text-[10px] uppercase tracking-widest text-[#c5c6ca] mb-3">Fotos del producto</label>
+
+      <!-- Fotos actuales -->
+      {% if imagenes %}
+      <div class="flex flex-wrap gap-3 mb-4">
+        {% for img in imagenes %}
+        <div class="relative group">
+          <img src="{{ img.imagen_data }}" alt="" class="w-24 h-24 object-contain bg-[#111] border border-[#333535]"/>
+          <form method="post" action="{% url 'catalogo:panel_imagen_eliminar' producto.pk img.pk %}" class="absolute top-1 right-1">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('¿Eliminar esta foto?')"
+                    class="bg-red-900/80 text-white w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- Subir nuevas (múltiples) -->
+      <div class="border border-dashed border-[#333535] hover:border-[#d4af37] transition-colors p-5 cursor-pointer"
+           onclick="document.getElementById('id_imagenes_nuevas').click()">
+        <input type="file" name="imagenes_nuevas" accept="image/*" id="id_imagenes_nuevas"
+               multiple class="hidden" onchange="mostrarArchivos(this)"/>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl text-[#47494d]">add_photo_alternate</span>
+          <div>
+            <p id="lista-archivos" class="sg text-xs text-[#c5c6ca] uppercase tracking-widest">Subir fotos (puedes seleccionar varias)</p>
+            <p class="sg text-[11px] text-[#47494d] uppercase tracking-widest mt-0.5">JPG, PNG, WEBP — se guardan en la base de datos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- O URL -->
+      <p class="sg text-[10px] text-[#47494d] uppercase tracking-widest text-center my-3">— o pegar URL de imagen —</p>
+      {{ form.imagen_url }}
+      {% if form.imagen_url.errors %}
+        <p class="sg text-xs text-red-400 mt-1">{{ form.imagen_url.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Opciones -->
+    <div class="md:col-span-2 flex items-center gap-8 border-t border-[#333535] pt-5">
+      <label class="flex items-center gap-3 cursor-pointer">
+        {{ form.disponible }}
+        <span class="sg text-xs uppercase tracking-widest text-[#e2e2e2]">Visible para clientes</span>
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer">
+        {{ form.destacado }}
+        <span class="sg text-xs uppercase tracking-widest text-[#e2e2e2]">Producto destacado</span>
+      </label>
+    </div>
+
+  </div>
+
+  <!-- Botones -->
+  <div class="flex items-center gap-4 mt-8 border-t border-[#333535] pt-6">
+    <button type="submit"
+            class="sg bg-[#d4af37] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-8 py-3.5 hover:bg-[#e9c349] transition-colors flex items-center gap-2">
+      <span class="material-symbols-outlined text-base">save</span>
+      {{ accion }}
+    </button>
+    <a href="{% url 'catalogo:panel_dashboard' %}"
+       class="sg border border-[#333535] text-[#c5c6ca] font-normal uppercase tracking-widest text-xs px-6 py-3.5 hover:border-[#c5c6ca] transition-colors">
+      Cancelar
+    </a>
+    {% if producto %}
+    <a href="{{ producto.get_absolute_url }}" target="_blank"
+       class="sg ml-auto flex items-center gap-1 text-xs text-[#47494d] hover:text-[#c5c6ca] uppercase tracking-widest transition-colors">
+      <span class="material-symbols-outlined text-sm">open_in_new</span>
+      Ver en catálogo
+    </a>
+    {% endif %}
+  </div>
+
+</form>
+
+<script>
+  function mostrarArchivos(input) {
+    const label = document.getElementById('lista-archivos');
+    if (input.files && input.files.length > 0) {
+      const nombres = Array.from(input.files).map(f => f.name).join(', ');
+      label.textContent = '✓ ' + input.files.length + ' foto(s): ' + nombres;
+      label.style.color = '#d4af37';
+    }
+  }
+  /* Aplicar estilos inline a los widgets de Django */
+  document.querySelectorAll('input[type="text"], input[type="number"], input[type="url"], textarea, select').forEach(el => {
+    el.style.cssText = 'width:100%;padding:10px 14px;background:#1e2020;color:#e2e2e2;border:1px solid #333535;border-radius:0;font-family:inherit;font-size:14px;';
+    el.addEventListener('focus', () => el.style.borderColor = '#d4af37');
+    el.addEventListener('blur', () => el.style.borderColor = '#333535');
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Supreme Store — Catálogo{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative w-full min-h-[75vh] flex items-center justify-center bg-surface-container-lowest overflow-hidden border-b border-outline-variant/30">
+  <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60 z-10"></div>
+  <div class="absolute inset-0 bg-surface-container-high bg-cover bg-center opacity-40"
+       style="background-image: linear-gradient(135deg, #1e2020 0%, #0c0f0f 50%, #1a1c1c 100%);"></div>
+  <!-- Patrón decorativo -->
+  <div class="absolute inset-0 opacity-[0.04]"
+       style="background-image: repeating-linear-gradient(45deg, #d4af37 0, #d4af37 1px, transparent 0, transparent 50%); background-size: 28px 28px;"></div>
+
+  <div class="relative z-20 text-center px-6 max-w-3xl mx-auto flex flex-col items-center gap-8">
+    <span class="font-spec-mono text-spec-mono text-dorado tracking-widest uppercase border border-dorado/30 px-4 py-1.5">
+      Importadora &amp; Distribuidora
+    </span>
+    <h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+      Supreme<br><span class="text-dorado">Store</span>
+    </h1>
+    <p class="font-body-reg text-body-reg text-on-surface-variant max-w-xl">
+      Catálogo completo de productos para el hogar, belleza, cocina y más. Calidad garantizada.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+      <a href="{% url 'catalogo:coleccion' %}"
+         class="bg-dorado text-on-primary font-spec-mono text-spec-mono font-bold py-4 px-10 uppercase tracking-widest hover:bg-primary-fixed-dim transition-colors">
+        Ver Catálogo
+      </a>
+      <a href="https://wa.me/573105514455?text=Hola%2C+quiero+cotizar+productos+de+Supreme+Store"
+         target="_blank" rel="noopener"
+         class="border border-dorado/50 text-dorado font-spec-mono text-spec-mono py-4 px-10 uppercase tracking-widest hover:border-dorado hover:bg-dorado/10 transition-colors flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.848L0 24l6.318-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+        </svg>
+        Cotizar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="bg-dorado">
+  <div class="max-w-7xl mx-auto px-4 py-5">
+    <div class="grid grid-cols-3 divide-x divide-on-primary/20 text-center">
+      <div class="px-4 py-3">
+        <p class="text-on-primary font-black text-2xl md:text-3xl font-headline-md">{{ total_productos }}+</p>
+        <p class="text-on-primary/70 font-spec-mono text-spec-mono uppercase tracking-widest mt-0.5">Productos</p>
+      </div>
+      <div class="px-4 py-3">
+        <p class="text-on-primary font-black text-2xl md:text-3xl font-headline-md">{{ categorias|length }}</p>
+        <p class="text-on-primary/70 font-spec-mono text-spec-mono uppercase tracking-widest mt-0.5">Categorías</p>
+      </div>
+      <div class="px-4 py-3">
+        <p class="text-on-primary font-black text-2xl md:text-3xl font-headline-md">24h</p>
+        <p class="text-on-primary/70 font-spec-mono text-spec-mono uppercase tracking-widest mt-0.5">Respuesta</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTACADOS -->
+{% if destacados %}
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-20">
+  <div class="flex items-center gap-4 mb-12">
+    <div class="h-px bg-outline-variant/40 flex-grow"></div>
+    <div class="text-center">
+      <p class="font-spec-mono text-spec-mono text-dorado uppercase tracking-widest mb-1">Selección</p>
+      <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Productos Destacados</h2>
+    </div>
+    <div class="h-px bg-outline-variant/40 flex-grow"></div>
+  </div>
+
+  <!-- Grid asimétrico estilo Stitch -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+    {% for producto in destacados %}
+      {% if forloop.first %}
+      <!-- Tarjeta hero (col-span-8) -->
+      <article class="md:col-span-8 bg-surface-container border border-surface-variant flex flex-col group">
+        <a href="{{ producto.get_absolute_url }}" class="flex flex-col h-full">
+          <div class="flex-grow relative overflow-hidden aspect-[4/3] md:aspect-[16/9] bg-surface-container-high">
+            {% if producto.get_imagen_url %}
+              <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+                   class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="font-display-lg text-display-lg text-surface-variant">{{ producto.nombre|first|upper }}</span>
+              </div>
+            {% endif %}
+            <div class="absolute top-4 left-4 bg-dorado text-on-primary font-spec-mono text-spec-mono px-3 py-1 uppercase">
+              Destacado
+            </div>
+          </div>
+          <div class="p-stack-md flex items-start justify-between border-t border-surface-variant bg-surface">
+            <div>
+              {% if producto.categoria %}<p class="font-spec-mono text-spec-mono text-secondary uppercase mb-1">{{ producto.categoria.nombre }}</p>{% endif %}
+              <h3 class="font-headline-md text-headline-md text-on-surface">{{ producto.nombre }}</h3>
+            </div>
+            <span class="font-price-lg text-price-lg text-dorado shrink-0 ml-4">{{ producto.precio_formateado }}</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Tarjeta secundaria (col-span-4) -->
+      {% elif forloop.counter == 2 %}
+      <article class="md:col-span-4 bg-surface-container border border-surface-variant flex flex-col group">
+        <a href="{{ producto.get_absolute_url }}" class="flex flex-col h-full">
+          <div class="flex-grow relative overflow-hidden aspect-[4/3] bg-surface-container-high">
+            {% if producto.get_imagen_url %}
+              <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+                   class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="font-headline-md text-headline-md text-surface-variant">{{ producto.nombre|first|upper }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <div class="p-stack-md border-t border-surface-variant bg-surface">
+            {% if producto.categoria %}<p class="font-spec-mono text-spec-mono text-secondary uppercase mb-1">{{ producto.categoria.nombre }}</p>{% endif %}
+            <h3 class="text-on-surface font-semibold leading-tight">{{ producto.nombre }}</h3>
+            <p class="font-price-lg text-price-lg text-dorado mt-2">{{ producto.precio_formateado }}</p>
+          </div>
+        </a>
+      </article>
+
+      {% else %}
+      <!-- Tarjetas de grid normal (col-span-3) -->
+      <article class="md:col-span-3 bg-surface-container border border-surface-variant flex flex-col group">
+        <a href="{{ producto.get_absolute_url }}" class="flex flex-col h-full">
+          <div class="relative overflow-hidden aspect-square bg-surface-container-high">
+            {% if producto.get_imagen_url %}
+              <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+                   class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="font-headline-md text-headline-md text-surface-variant">{{ producto.nombre|first|upper }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <div class="p-4 border-t border-surface-variant bg-surface">
+            <h3 class="text-on-surface text-sm font-semibold leading-tight line-clamp-2">{{ producto.nombre }}</h3>
+            <p class="text-dorado font-semibold mt-2 text-sm">{{ producto.precio_formateado }}</p>
+          </div>
+        </a>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="{% url 'catalogo:coleccion' %}"
+       class="inline-flex items-center gap-2 border border-outline-variant text-on-surface font-spec-mono text-spec-mono uppercase py-4 px-10 hover:border-dorado hover:text-dorado transition-colors tracking-widest">
+      Ver catálogo completo
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+</section>
+{% endif %}
+
+<!-- CATEGORÍAS -->
+{% if categorias %}
+<section class="border-t border-surface-variant py-20">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="h-px bg-outline-variant/40 flex-grow"></div>
+      <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight px-4">Categorías</h2>
+      <div class="h-px bg-outline-variant/40 flex-grow"></div>
+    </div>
+
+    <div class="flex items-center gap-6 overflow-x-auto no-scrollbar pb-4 snap-x">
+      {% for cat in categorias %}
+      <a href="{{ cat.get_absolute_url }}"
+         class="flex flex-col items-center gap-stack-sm min-w-[110px] snap-center group">
+        <div class="w-20 h-20 border border-outline-variant/40 flex items-center justify-center bg-surface-container group-hover:border-dorado group-hover:bg-surface-container-high transition-all">
+          <span class="font-headline-md text-2xl text-on-surface-variant group-hover:text-dorado transition-colors font-bold">
+            {{ cat.nombre|first|upper }}
+          </span>
+        </div>
+        <span class="font-spec-mono text-spec-mono text-secondary uppercase text-center group-hover:text-dorado transition-colors">
+          {{ cat.nombre }}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA WHATSAPP -->
+<section class="bg-surface-container-lowest border-t border-surface-variant py-20">
+  <div class="max-w-2xl mx-auto px-6 text-center flex flex-col items-center gap-6">
+    <span class="font-spec-mono text-spec-mono text-dorado uppercase tracking-widest border border-dorado/30 px-4 py-1.5">
+      Contacto Directo
+    </span>
+    <h2 class="font-headline-md text-headline-md text-on-surface">
+      Pedidos y cotizaciones por WhatsApp
+    </h2>
+    <p class="font-body-reg text-body-reg text-on-surface-variant max-w-md">
+      Precios especiales para distribuidores y pedidos al por mayor. Atención personalizada.
+    </p>
+    <a href="https://wa.me/573105514455?text=Hola%2C+quiero+cotizar+productos+de+Supreme+Store"
+       target="_blank" rel="noopener"
+       class="flex items-center gap-3 bg-[#25D366] text-white font-spec-mono text-spec-mono uppercase tracking-widest py-4 px-10 hover:bg-[#1ebe57] transition-colors">
+      <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.848L0 24l6.318-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+      </svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+{% endblock %}

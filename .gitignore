@@ -1,0 +1,23 @@
+# Claude Code
+.claude/
+
+# Django
+*.pyc
+__pycache__/
+*.pyo
+*.sqlite3.bak
+media/
+.env
+local_settings.py
+
+# Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db

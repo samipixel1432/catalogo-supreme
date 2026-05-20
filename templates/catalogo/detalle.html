@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ producto.nombre }} — Supreme{% endblock %}
+
+{% block content %}
+
+<!-- BREADCRUMB -->
+<div class="border-b border-surface-variant bg-surface-container-lowest px-4 md:px-8 py-3">
+  <div class="max-w-7xl mx-auto">
+    <nav class="flex items-center gap-2 font-spec-mono text-spec-mono text-secondary uppercase tracking-widest">
+      <a href="{% url 'catalogo:landing' %}" class="hover:text-dorado transition-colors">Inicio</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="{% url 'catalogo:coleccion' %}" class="hover:text-dorado transition-colors">Catálogo</a>
+      {% if producto.categoria %}
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <a href="{{ producto.categoria.get_absolute_url }}" class="hover:text-dorado transition-colors">{{ producto.categoria.nombre }}</a>
+      {% endif %}
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-on-surface-variant truncate max-w-[180px]">{{ producto.nombre }}</span>
+    </nav>
+  </div>
+</div>
+
+<!-- PRODUCTO PRINCIPAL -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+
+    <!-- GALERÍA (col-span-7) -->
+    <div class="md:col-span-7">
+
+      {% with imagenes=producto.imagenes.all %}
+      {% if imagenes %}
+        <!-- Imagen principal -->
+        <div class="relative img-bg border border-surface-variant overflow-hidden cursor-zoom-in"
+             style="aspect-ratio:1/1" onclick="abrirVisor(0)">
+          <img id="img-principal" src="{{ imagenes.0.imagen_data }}"
+               alt="{{ producto.nombre }}"
+               class="w-full h-full object-contain transition-all duration-300"/>
+          {% if producto.destacado %}
+            <div class="absolute top-4 left-4 bg-dorado text-on-primary font-spec-mono text-spec-mono uppercase px-3 py-1 tracking-widest">Destacado</div>
+          {% endif %}
+          <div class="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">zoom_in</span> Ver completa
+          </div>
+        </div>
+
+        <!-- Miniaturas -->
+        {% if imagenes|length > 1 %}
+        <div class="flex gap-2 mt-2 overflow-x-auto pb-1">
+          {% for img in imagenes %}
+          <button onclick="cambiarImagen('{{ img.imagen_data }}', {{ forloop.counter0 }})"
+                  class="flex-shrink-0 w-16 h-16 border-2 transition-colors overflow-hidden bg-[#111]
+                         {% if forloop.first %}border-dorado{% else %}border-surface-variant hover:border-dorado/50{% endif %}"
+                  id="thumb-{{ forloop.counter0 }}">
+            <img src="{{ img.imagen_data }}" alt="" class="w-full h-full object-contain"/>
+          </button>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      {% elif producto.imagen_url %}
+        <!-- Fallback: imagen_url (productos importados) -->
+        <div class="relative img-bg border border-surface-variant overflow-hidden cursor-zoom-in"
+             style="aspect-ratio:1/1" onclick="abrirVisorUrl('{{ producto.imagen_url }}')">
+          <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}"
+               class="w-full h-full object-contain"/>
+          <div class="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">zoom_in</span> Ver completa
+          </div>
+        </div>
+      {% else %}
+        <div class="w-full flex flex-col items-center justify-center gap-4 bg-surface-container-high border border-surface-variant" style="aspect-ratio:1/1">
+          <span class="font-display-lg text-display-lg text-surface-variant font-black">{{ producto.nombre|first|upper }}</span>
+          <span class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest">Sin imagen</span>
+        </div>
+      {% endif %}
+      {% endwith %}
+
+    </div>
+
+    <!-- VISOR PANTALLA COMPLETA -->
+    <div id="visor" class="fixed inset-0 z-[9999] bg-black/95 hidden items-center justify-center"
+         onclick="cerrarVisor()">
+      <button class="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/20 w-10 h-10 flex items-center justify-center transition-colors" onclick="cerrarVisor()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <button id="visor-prev" class="absolute left-4 text-white bg-white/10 hover:bg-white/20 w-10 h-10 flex items-center justify-center transition-colors hidden" onclick="event.stopPropagation();moverVisor(-1)">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <img id="visor-img" src="" alt=""
+           class="max-w-[92vw] max-h-[92vh] object-contain select-none"
+           onclick="event.stopPropagation()"/>
+      <button id="visor-next" class="absolute right-4 text-white bg-white/10 hover:bg-white/20 w-10 h-10 flex items-center justify-center transition-colors hidden" onclick="event.stopPropagation();moverVisor(1)">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- INFO (col-span-5) -->
+    <div class="md:col-span-5 flex flex-col gap-6">
+
+      <!-- Categoría + Nombre -->
+      <div class="border-b border-surface-variant pb-6">
+        {% if producto.categoria %}
+          <p class="font-spec-mono text-spec-mono text-dorado uppercase tracking-widest mb-2">{{ producto.categoria.nombre }}</p>
+        {% endif %}
+        <h1 class="font-headline-md text-headline-md text-on-surface leading-tight">{{ producto.nombre }}</h1>
+        {% if producto.referencia %}
+          <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mt-2">Ref: {{ producto.referencia }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Precio -->
+      <div class="border-b border-surface-variant pb-6">
+        <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mb-1">Precio</p>
+        <p class="font-price-lg text-price-lg text-dorado text-3xl">{{ producto.precio_formateado }}</p>
+      </div>
+
+      <!-- Descripción corta -->
+      {% if producto.descripcion_corta %}
+      <div class="border-b border-surface-variant pb-6">
+        <p class="font-body-reg text-body-reg text-on-surface-variant leading-relaxed">{{ producto.descripcion_corta }}</p>
+      </div>
+      {% endif %}
+
+      <!-- BOTÓN WHATSAPP -->
+      <div class="flex flex-col gap-3">
+        <a href="{{ whatsapp_url }}" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-3 bg-[#25D366] text-white font-spec-mono text-spec-mono uppercase tracking-widest py-4 px-6 hover:bg-[#1ebe57] active:scale-[0.98] transition-all">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.848L0 24l6.318-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+          </svg>
+          Consultar por WhatsApp
+        </a>
+
+        <a href="{% url 'catalogo:coleccion' %}"
+           class="flex items-center justify-center gap-2 border border-outline-variant text-on-surface font-spec-mono text-spec-mono uppercase tracking-widest py-3 px-6 hover:border-dorado hover:text-dorado transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Volver al catálogo
+        </a>
+      </div>
+
+      <!-- Ficha técnica estilo Stitch -->
+      {% if producto.descripcion %}
+      <div class="border-t border-surface-variant pt-6">
+        <p class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest mb-4">Descripción</p>
+        <div class="font-body-reg text-body-reg text-on-surface-variant leading-relaxed prose-sm">
+          {{ producto.descripcion|linebreaks }}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS RELACIONADOS -->
+{% if relacionados %}
+<section class="border-t border-surface-variant py-16">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex items-center gap-4 mb-10">
+      <div class="h-px bg-outline-variant/40 flex-grow"></div>
+      <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight px-4">También te puede interesar</h2>
+      <div class="h-px bg-outline-variant/40 flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+      {% for rel in relacionados %}
+      <article class="bg-surface-container border border-surface-variant flex flex-col group hover:border-dorado/40 transition-colors">
+        <a href="{{ rel.get_absolute_url }}" class="flex flex-col h-full">
+          <div class="relative overflow-hidden aspect-square bg-surface-container-high">
+            {% if rel.get_imagen_url %}
+              <img src="{{ rel.get_imagen_url }}" alt="{{ rel.nombre }}"
+                   class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center bg-surface-container">
+                <span class="font-headline-md text-3xl text-surface-variant font-black">{{ rel.nombre|first|upper }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <div class="p-3 border-t border-surface-variant bg-surface">
+            <h3 class="text-on-surface text-sm font-semibold leading-snug line-clamp-2 group-hover:text-dorado transition-colors">{{ rel.nombre }}</h3>
+            <p class="text-dorado font-semibold mt-1 text-sm">{{ rel.precio_formateado }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  const imagenes = [
+    {% for img in producto.imagenes.all %}'{{ img.imagen_data }}'{% if not forloop.last %},{% endif %}
+    {% endfor %}
+    {% if not producto.imagenes.exists %}{% if producto.imagen_url %}'{{ producto.imagen_url }}'{% endif %}{% endif %}
+  ].filter(Boolean);
+
+  let imgActual = 0;
+
+  function cambiarImagen(src, idx) {
+    document.getElementById('img-principal').src = src;
+    imgActual = idx;
+    document.querySelectorAll('[id^="thumb-"]').forEach((t, i) => {
+      t.classList.toggle('border-dorado', i === idx);
+      t.classList.toggle('border-surface-variant', i !== idx);
+    });
+  }
+
+  function abrirVisor(idx) {
+    if (!imagenes.length) return;
+    imgActual = idx;
+    document.getElementById('visor-img').src = imagenes[idx];
+    const visor = document.getElementById('visor');
+    visor.classList.remove('hidden');
+    visor.classList.add('flex');
+    const multi = imagenes.length > 1;
+    document.getElementById('visor-prev').classList.toggle('hidden', !multi);
+    document.getElementById('visor-next').classList.toggle('hidden', !multi);
+  }
+
+  function abrirVisorUrl(url) {
+    document.getElementById('visor-img').src = url;
+    const visor = document.getElementById('visor');
+    visor.classList.remove('hidden');
+    visor.classList.add('flex');
+  }
+
+  function cerrarVisor() {
+    const visor = document.getElementById('visor');
+    visor.classList.add('hidden');
+    visor.classList.remove('flex');
+  }
+
+  function moverVisor(dir) {
+    imgActual = (imgActual + dir + imagenes.length) % imagenes.length;
+    document.getElementById('visor-img').src = imagenes[imgActual];
+    if (document.getElementById('img-principal'))
+      cambiarImagen(imagenes[imgActual], imgActual);
+  }
+
+  document.addEventListener('keydown', e => {
+    const visor = document.getElementById('visor');
+    if (!visor.classList.contains('hidden')) {
+      if (e.key === 'Escape') cerrarVisor();
+      if (e.key === 'ArrowLeft') moverVisor(-1);
+      if (e.key === 'ArrowRight') moverVisor(1);
+    }
+  });
+</script>
+{% endblock %}

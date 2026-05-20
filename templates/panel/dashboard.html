@@ -1,0 +1,157 @@
+{% extends "panel/base_panel.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block nav_productos %}text-[#d4af37] bg-[#1e2020]{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+  <div>
+    <p class="sg text-xs text-[#d4af37] uppercase tracking-widest mb-1">Panel de Administración</p>
+    <h1 class="text-2xl font-black uppercase tracking-tight">Productos <span class="text-[#47494d]">({{ total }})</span></h1>
+  </div>
+  <a href="{% url 'catalogo:panel_producto_nuevo' %}"
+     class="sg flex items-center gap-2 bg-[#d4af37] text-[#3c2f00] font-bold uppercase tracking-widest text-xs px-6 py-3 hover:bg-[#e9c349] transition-colors self-start">
+    <span class="material-symbols-outlined text-base">add</span>
+    Nuevo producto
+  </a>
+</div>
+
+<!-- Buscador -->
+<form method="get" class="flex items-center bg-[#1e2020] border border-[#333535] mb-6 max-w-md">
+  <input name="q" type="text" value="{{ busqueda }}" placeholder="Buscar producto..."
+         class="flex-1 px-4 py-2.5 sg text-sm border-none !border-0 !border-transparent focus:!border-transparent"/>
+  <button type="submit" class="px-4 text-[#c5c6ca] hover:text-[#d4af37] transition-colors">
+    <span class="material-symbols-outlined text-lg">search</span>
+  </button>
+  {% if busqueda %}
+  <a href="{% url 'catalogo:panel_dashboard' %}" class="px-3 text-[#c5c6ca] hover:text-red-400 transition-colors">
+    <span class="material-symbols-outlined text-lg">close</span>
+  </a>
+  {% endif %}
+</form>
+
+<!-- Tabla -->
+<div class="border border-[#333535] overflow-x-auto">
+  <table class="w-full text-sm">
+    <thead class="bg-[#0c0f0f] border-b border-[#333535]">
+      <tr>
+        <th class="sg text-left text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal">Imagen</th>
+        <th class="sg text-left text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal">Producto</th>
+        <th class="sg text-left text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal hidden md:table-cell">Categoría</th>
+        <th class="sg text-left text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal hidden md:table-cell">Precio</th>
+        <th class="sg text-center text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal hidden lg:table-cell">Activo</th>
+        <th class="sg text-center text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal hidden lg:table-cell">Destacado</th>
+        <th class="sg text-right text-[10px] uppercase tracking-widest text-[#c5c6ca] px-4 py-3 font-normal">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-[#1e2020]">
+      {% for producto in productos %}
+      <tr class="hover:bg-[#1e2020]/50 transition-colors">
+        <!-- Imagen -->
+        <td class="px-4 py-3">
+          {% if producto.get_imagen_url %}
+            <img src="{{ producto.get_imagen_url }}" alt="{{ producto.nombre }}"
+                 class="w-12 h-12 object-cover border border-[#333535] opacity-90"/>
+          {% else %}
+            <div class="w-12 h-12 border border-[#333535] bg-[#1e2020] flex items-center justify-center">
+              <span class="text-[#47494d] text-lg font-bold">{{ producto.nombre|first|upper }}</span>
+            </div>
+          {% endif %}
+        </td>
+
+        <!-- Nombre + ref -->
+        <td class="px-4 py-3">
+          <p class="font-semibold text-[#e2e2e2] leading-tight">{{ producto.nombre }}</p>
+          {% if producto.referencia %}
+            <p class="sg text-[11px] text-[#47494d] uppercase tracking-widest mt-0.5">{{ producto.referencia }}</p>
+          {% endif %}
+        </td>
+
+        <!-- Categoría -->
+        <td class="px-4 py-3 hidden md:table-cell">
+          <span class="sg text-xs text-[#c5c6ca] uppercase tracking-widest">
+            {{ producto.categoria.nombre|default:"—" }}
+          </span>
+        </td>
+
+        <!-- Precio -->
+        <td class="px-4 py-3 hidden md:table-cell">
+          <span class="sg text-sm font-semibold text-[#d4af37]">{{ producto.precio_formateado }}</span>
+        </td>
+
+        <!-- Disponible -->
+        <td class="px-4 py-3 text-center hidden lg:table-cell">
+          {% if producto.disponible %}
+            <span class="material-symbols-outlined text-green-400 text-lg" style="font-variation-settings:'FILL' 1">check_circle</span>
+          {% else %}
+            <span class="material-symbols-outlined text-[#47494d] text-lg">cancel</span>
+          {% endif %}
+        </td>
+
+        <!-- Destacado -->
+        <td class="px-4 py-3 text-center hidden lg:table-cell">
+          {% if producto.destacado %}
+            <span class="material-symbols-outlined text-[#d4af37] text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          {% else %}
+            <span class="material-symbols-outlined text-[#47494d] text-lg">star</span>
+          {% endif %}
+        </td>
+
+        <!-- Acciones -->
+        <td class="px-4 py-3 text-right">
+          <div class="flex items-center justify-end gap-3">
+            <a href="{{ producto.get_absolute_url }}" target="_blank"
+               class="text-[#47494d] hover:text-[#c5c6ca] transition-colors" title="Ver en catálogo">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+            </a>
+            <a href="{% url 'catalogo:panel_producto_editar' producto.pk %}"
+               class="text-[#c5c6ca] hover:text-[#d4af37] transition-colors" title="Editar">
+              <span class="material-symbols-outlined text-lg">edit</span>
+            </a>
+            <a href="{% url 'catalogo:panel_producto_eliminar' producto.pk %}"
+               class="text-[#c5c6ca] hover:text-red-400 transition-colors" title="Eliminar">
+              <span class="material-symbols-outlined text-lg">delete</span>
+            </a>
+          </div>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="7" class="px-4 py-16 text-center">
+          <p class="sg text-sm text-[#47494d] uppercase tracking-widest">
+            {% if busqueda %}No hay resultados para "{{ busqueda }}"{% else %}Aún no hay productos{% endif %}
+          </p>
+          <a href="{% url 'catalogo:panel_producto_nuevo' %}"
+             class="sg inline-block mt-4 text-xs text-[#d4af37] hover:underline uppercase tracking-widest">
+            + Crear el primero
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Categorías rápidas -->
+{% if categorias %}
+<div class="mt-10">
+  <div class="flex items-center justify-between mb-4">
+    <p class="sg text-xs text-[#c5c6ca] uppercase tracking-widest">Categorías ({{ categorias|length }})</p>
+    <a href="{% url 'catalogo:panel_categoria_nueva' %}"
+       class="sg text-xs text-[#d4af37] hover:underline uppercase tracking-widest flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">add</span> Nueva
+    </a>
+  </div>
+  <div class="flex flex-wrap gap-2">
+    {% for cat in categorias %}
+    <span class="sg text-xs border border-[#333535] text-[#c5c6ca] px-3 py-1.5 uppercase tracking-widest">
+      {{ cat.nombre }}
+      <span class="text-[#47494d] ml-1">({{ cat.productos.count }})</span>
+    </span>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

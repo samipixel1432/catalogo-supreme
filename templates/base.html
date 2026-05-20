@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Evita destello de tema incorrecto al cargar -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('supreme-tema');
+      var dark=t==='oscuro'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark',dark);
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Supreme Store{% endblock %}</title>
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Supreme Store" />
+  <meta property="og:title"       content="{% block og_title %}Supreme Store{% endblock %}" />
+  <meta property="og:description" content="{% block og_desc %}Productos de calidad para el hogar, belleza, cocina y más. Precios directos de bodega.{% endblock %}" />
+  <meta property="og:image"       content="https://catalogosam-hxxq.vercel.app/static/img/logo_claro.png" />
+  <meta property="og:url"         content="https://catalogosam-hxxq.vercel.app{{ request.get_full_path }}" />
+  <meta name="twitter:card"       content="summary" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":              "var(--primary)",
+            "primary-container":    "var(--primary-container)",
+            "primary-fixed":        "var(--primary-fixed)",
+            "primary-fixed-dim":    "var(--primary-fixed-dim)",
+            "on-primary":           "var(--on-primary)",
+            "on-primary-container": "var(--on-primary-container)",
+            "secondary":            "var(--secondary)",
+            "secondary-container":  "var(--secondary-container)",
+            "on-secondary":         "var(--on-secondary)",
+            "on-secondary-container":"var(--on-secondary-container)",
+            "tertiary":             "var(--tertiary)",
+            "on-tertiary":          "var(--on-tertiary)",
+            "surface":              "var(--surface)",
+            "surface-dim":          "var(--surface-dim)",
+            "surface-bright":       "var(--surface-bright)",
+            "surface-container-lowest": "var(--surface-container-lowest)",
+            "surface-container-low":    "var(--surface-container-low)",
+            "surface-container":        "var(--surface-container)",
+            "surface-container-high":   "var(--surface-container-high)",
+            "surface-container-highest":"var(--surface-container-highest)",
+            "surface-variant":      "var(--surface-variant)",
+            "on-surface":           "var(--on-surface)",
+            "on-surface-variant":   "var(--on-surface-variant)",
+            "inverse-surface":      "var(--inverse-surface)",
+            "background":           "var(--background)",
+            "on-background":        "var(--on-background)",
+            "outline":              "var(--outline)",
+            "outline-variant":      "var(--outline-variant)",
+            "error":                "var(--error)",
+            "error-container":      "var(--error-container)",
+            "dorado":               "#D4AF37",
+          },
+          fontFamily: {
+            "body-reg":    ["Inter"],
+            "spec-mono":   ["Space Grotesk"],
+            "price-lg":    ["Space Grotesk"],
+            "headline-md": ["Inter"],
+            "display-lg":  ["Inter"],
+          },
+          fontSize: {
+            "body-reg":    ["16px", { lineHeight:"1.6",  letterSpacing:"0",      fontWeight:"400" }],
+            "spec-mono":   ["13px", { lineHeight:"1.5",  letterSpacing:"0.06em", fontWeight:"400" }],
+            "price-lg":    ["22px", { lineHeight:"1",    letterSpacing:"0",      fontWeight:"600" }],
+            "headline-md": ["28px", { lineHeight:"1.2",  letterSpacing:"-0.01em",fontWeight:"700" }],
+            "display-lg":  ["52px", { lineHeight:"1.1",  letterSpacing:"-0.02em",fontWeight:"800" }],
+          },
+          spacing: {
+            "unit":      "4px",
+            "stack-sm":  "8px",
+            "stack-md":  "16px",
+            "stack-lg":  "32px",
+            "gutter":    "24px",
+            "margin":    "48px",
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* ── Tema claro (por defecto) ── */
+    :root {
+      --primary:              #C9A020;
+      --primary-container:    #FFF0B0;
+      --primary-fixed:        #E8C030;
+      --primary-fixed-dim:    #B8900A;
+      --on-primary:           #1A1200;
+      --on-primary-container: #3A2E00;
+      --secondary:            #3E3C36;
+      --secondary-container:  #D4D0C8;
+      --on-secondary:         #FFFFFF;
+      --on-secondary-container:#1A1810;
+      --tertiary:             #3E3C3A;
+      --on-tertiary:          #FFFFFF;
+      --surface:              #F5F2EA;
+      --surface-dim:          #CCC9C0;
+      --surface-bright:       #FDFCF8;
+      --surface-container-lowest: #FDFCF8;
+      --surface-container-low:    #EDE9DF;
+      --surface-container:        #E2DDD2;
+      --surface-container-high:   #D6D1C6;
+      --surface-container-highest:#CAC5BA;
+      --surface-variant:      #B8B4AA;
+      --on-surface:           #0C0C0A;
+      --on-surface-variant:   #34322C;
+      --inverse-surface:      #28261E;
+      --background:           #E8E4D8;
+      --on-background:        #0C0C0A;
+      --outline:              #605D56;
+      --outline-variant:      #9A968E;
+      --error:                #BA1A1A;
+      --error-container:      #FFDAd6;
+      --nav-bg:               rgba(232,228,216,0.94);
+      --img-bg:               #DDD9CE;
+    }
+
+    /* ── Tema oscuro ── */
+    .dark {
+      --primary:              #D4AF37;
+      --primary-container:    #B8960C;
+      --primary-fixed:        #F2CA50;
+      --primary-fixed-dim:    #C9A020;
+      --on-primary:           #1A1200;
+      --on-primary-container: #FFF0B0;
+      --secondary:            #c5c6ca;
+      --secondary-container:  #47494d;
+      --on-secondary:         #2e3034;
+      --on-secondary-container:#b7b8bc;
+      --tertiary:             #d0cdcd;
+      --on-tertiary:          #313030;
+      --surface:              #121414;
+      --surface-dim:          #121414;
+      --surface-bright:       #38393a;
+      --surface-container-lowest: #0c0f0f;
+      --surface-container-low:    #1a1c1c;
+      --surface-container:        #1e2020;
+      --surface-container-high:   #282a2b;
+      --surface-container-highest:#333535;
+      --surface-variant:      #333535;
+      --on-surface:           #b8b4ac;
+      --on-surface-variant:   #a89e8c;
+      --inverse-surface:      #b8b4ac;
+      --background:           #121414;
+      --on-background:        #b8b4ac;
+      --outline:              #99907c;
+      --outline-variant:      #4d4635;
+      --error:                #ffb4ab;
+      --error-container:      #93000a;
+      --nav-bg:               rgba(18,20,20,0.92);
+      --img-bg:               #111;
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display:none; }
+    .no-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+    .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+    .nav-glass { background-color: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .img-bg { background-color: var(--img-bg); }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-background text-on-background font-body-reg text-body-reg min-h-screen flex flex-col pb-20 md:pb-0 pt-[64px] transition-colors duration-200">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-outline-variant">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+      <a href="{% url 'catalogo:landing' %}" class="flex items-center gap-3">
+        <img src="{% static 'img/logo.png' %}"       alt="Supreme Store" class="h-9 w-auto hidden dark:block" />
+        <img src="{% static 'img/logo_claro.png' %}" alt="Supreme Store" class="h-9 w-auto dark:hidden" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="{% url 'catalogo:coleccion' %}"
+           class="font-spec-mono text-spec-mono uppercase tracking-widest transition-colors
+                  {% if request.resolver_match.url_name == 'coleccion' or request.resolver_match.url_name == 'detalle' %}text-dorado{% else %}text-secondary hover:text-on-surface{% endif %}">
+          Catálogo
+        </a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <!-- Buscador -->
+        <button onclick="document.getElementById('busqueda-modal').classList.toggle('hidden')"
+                class="text-secondary hover:text-on-surface transition-colors" title="Buscar">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <!-- Toggle modo claro/oscuro -->
+        <button id="theme-toggle" onclick="toggleTema()" title="Cambiar tema"
+                class="text-secondary hover:text-on-surface transition-colors">
+          <span id="theme-icon" class="material-symbols-outlined">light_mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modal búsqueda -->
+  <div id="busqueda-modal" class="hidden fixed inset-0 z-[60] flex items-start justify-center pt-24 px-4">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"
+         onclick="document.getElementById('busqueda-modal').classList.add('hidden')"></div>
+    <form action="{% url 'catalogo:coleccion' %}" method="get" class="relative z-10 w-full max-w-lg">
+      <div class="flex items-center bg-surface-container border border-outline-variant">
+        <input name="q" type="text" placeholder="Buscar productos..." autofocus
+               class="flex-1 bg-transparent text-on-surface placeholder-secondary px-5 py-4 outline-none" />
+        <button type="submit" class="px-5 text-dorado hover:text-primary-fixed transition-colors">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <main class="flex-1">{% block content %}{% endblock %}</main>
+
+  <footer class="hidden md:block border-t border-surface-variant mt-20">
+    <div class="max-w-7xl mx-auto px-8 py-8 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="{% static 'img/logo.png' %}"       alt="Supreme" class="h-8 w-auto opacity-80 hidden dark:block" />
+        <img src="{% static 'img/logo_claro.png' %}" alt="Supreme" class="h-8 w-auto opacity-80 dark:hidden" />
+        <span class="font-spec-mono text-spec-mono text-secondary uppercase tracking-widest">
+          © {% now "Y" %}
+        </span>
+      </div>
+      <a href="https://wa.me/573105514455" target="_blank" rel="noopener"
+         class="font-spec-mono text-spec-mono text-dorado hover:text-primary-fixed uppercase tracking-widest transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.848L0 24l6.318-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </footer>
+
+  <!-- Nav móvil -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-surface-container-lowest border-t border-surface-variant">
+    <a href="{% url 'catalogo:landing' %}"
+       class="flex flex-col items-center py-3 px-4 {% if request.resolver_match.url_name == 'landing' %}text-dorado{% else %}text-secondary{% endif %}">
+      <span class="material-symbols-outlined text-xl">home</span>
+      <span class="font-spec-mono text-[10px] tracking-widest uppercase mt-0.5">Inicio</span>
+    </a>
+    <a href="{% url 'catalogo:coleccion' %}"
+       class="flex flex-col items-center py-3 px-4 {% if request.resolver_match.url_name == 'coleccion' or request.resolver_match.url_name == 'detalle' %}text-dorado{% else %}text-secondary{% endif %}">
+      <span class="material-symbols-outlined text-xl">grid_view</span>
+      <span class="font-spec-mono text-[10px] tracking-widest uppercase mt-0.5">Catálogo</span>
+    </a>
+    <!-- Toggle tema móvil -->
+    <button onclick="toggleTema()"
+            class="flex flex-col items-center py-3 px-4 text-secondary">
+      <span id="theme-icon-mobile" class="material-symbols-outlined text-xl">light_mode</span>
+      <span class="font-spec-mono text-[10px] tracking-widest uppercase mt-0.5">Tema</span>
+    </button>
+  </nav>
+
+  <script>
+    function toggleTema() {
+      var html = document.documentElement;
+      var esDark = html.classList.toggle('dark');
+      localStorage.setItem('supreme-tema', esDark ? 'oscuro' : 'claro');
+      actualizarIcono(esDark);
+    }
+    function actualizarIcono(esDark) {
+      var icono = esDark ? 'light_mode' : 'dark_mode';
+      var d = document.getElementById('theme-icon');
+      var m = document.getElementById('theme-icon-mobile');
+      if (d) d.textContent = icono;
+      if (m) m.textContent = icono;
+    }
+    // Sincronizar icono al cargar
+    actualizarIcono(document.documentElement.classList.contains('dark'));
+  </script>
+
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

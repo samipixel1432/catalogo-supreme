@@ -1,0 +1,1122 @@
+[
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE TELA(JL- 01)",
+    "reference": "JL-01",
+    "slug": "armario-de-tela-jl-01",
+    "image_filename": "armario-de-tela-jl-01-3.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE TELA(JL- 02)",
+    "reference": "JL-02",
+    "slug": "armario-de-tela-jl-02",
+    "image_filename": "armario-de-tela-jl-02-4.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE TELA(JL- 03)",
+    "reference": "JL-03",
+    "slug": "armario-de-tela-jl-03",
+    "image_filename": "armario-de-tela-jl-03-5.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE TELA(JL- 04)",
+    "reference": "JL-04",
+    "slug": "armario-de-tela-jl-04",
+    "image_filename": "armario-de-tela-jl-04-6.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE TELA(JL- 05)",
+    "reference": "JL-05",
+    "slug": "armario-de-tela-jl-05",
+    "image_filename": "armario-de-tela-jl-05-7.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑO (JL-06)",
+    "reference": "JL-06",
+    "slug": "armario-de-nino-jl-06",
+    "image_filename": "armario-de-nino-jl-06-8.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑA  (JL-07)",
+    "reference": "JL-07",
+    "slug": "armario-de-nina-jl-07",
+    "image_filename": "armario-de-nina-jl-07-9.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO NEGRO (JL- 08)",
+    "reference": "JL-08",
+    "slug": "armario-zapatero-negro-jl-08",
+    "image_filename": "armario-zapatero-negro-jl-08-10.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO BLANCO(JL- 09)",
+    "reference": "JL-09",
+    "slug": "armario-zapatero-blanco-jl-09",
+    "image_filename": "armario-zapatero-blanco-jl-09-11.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO ROSADO (JL - 10)",
+    "reference": "JL-10",
+    "slug": "armario-zapatero-rosado-jl-10",
+    "image_filename": "armario-zapatero-rosado-jl-10-12.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO AZUL (JL - 11)",
+    "reference": "JL-11",
+    "slug": "armario-zapatero-azul-jl-11",
+    "image_filename": "armario-zapatero-azul-jl-11-13.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO BLANCO (JL - 12)",
+    "reference": "JL-12",
+    "slug": "armario-zapatero-blanco-jl-12",
+    "image_filename": "armario-zapatero-blanco-jl-12-14.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑO AZUL (JL-13)",
+    "reference": "JL-13",
+    "slug": "armario-de-nino-azul-jl-13",
+    "image_filename": "armario-de-nino-azul-jl-13-15.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE 10 CAJONES(JL-14)",
+    "reference": "JL-14",
+    "slug": "armario-de-10-cajones-jl-14",
+    "image_filename": "armario-de-10-cajones-jl-14-16.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO ZAPATERO NEGRO (JL- 15)",
+    "reference": "JL-15",
+    "slug": "armario-zapatero-negro-jl-15",
+    "image_filename": "armario-zapatero-negro-jl-15-17.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE 16 CAJONES (JL-16)",
+    "reference": "JL-16",
+    "slug": "armario-de-16-cajones-jl-16",
+    "image_filename": "armario-de-16-cajones-jl-16-18.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE PRINCESA (JL-17)",
+    "reference": "JL-17",
+    "slug": "armario-de-princesa-jl-17",
+    "image_filename": "armario-de-princesa-jl-17-19.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑO BLANCO (JL-18)",
+    "reference": "JL-18",
+    "slug": "armario-de-nino-blanco-jl-18",
+    "image_filename": "armario-de-nino-blanco-jl-18-20.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑO AZUL (JL- 19)",
+    "reference": "JL-19",
+    "slug": "armario-de-nino-azul-jl-19",
+    "image_filename": "armario-de-nino-azul-jl-19-21.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NIÑO CARROS (JL-20)",
+    "reference": "JL-20",
+    "slug": "armario-de-nino-carros-jl-20",
+    "image_filename": "armario-de-nino-carros-jl-20-22.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE NEGRO (JL-21)",
+    "reference": "JL-21",
+    "slug": "armario-de-negro-jl-21",
+    "image_filename": "armario-de-negro-jl-21-23.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE HOMBRE ARAÑA (JL-22)",
+    "reference": "JL-22",
+    "slug": "armario-de-hombre-arana-jl-22",
+    "image_filename": "armario-de-hombre-arana-jl-22-24.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "ARMARIOS",
+    "name": "ARMARIO DE BALNCO (JL- 23)",
+    "reference": "JL-23",
+    "slug": "armario-de-balnco-jl-23",
+    "image_filename": "armario-de-balnco-jl-23-25.jpg",
+    "description": "Armario de tela resistente, ideal para organizar ropa y accesorios. Fácil de armar y desarmar."
+  },
+  {
+    "category": "RELOJES",
+    "name": "RELOJ CAJA AZUL",
+    "reference": "",
+    "slug": "reloj-caja-azul",
+    "image_filename": "reloj-caja-azul-27.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "RELOJ CAJA NARANJA CON BLANCO",
+    "reference": "",
+    "slug": "reloj-caja-naranja-con-blanco",
+    "image_filename": "reloj-caja-naranja-con-blanco-28.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "RELOJ CAJA VERDE",
+    "reference": "",
+    "slug": "reloj-caja-verde",
+    "image_filename": "reloj-caja-verde-29.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "T900",
+    "reference": "",
+    "slug": "t900",
+    "image_filename": "t900-30.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "C900",
+    "reference": "",
+    "slug": "c900",
+    "image_filename": "c900-31.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "BIG 2.0",
+    "reference": "",
+    "slug": "big-2-0",
+    "image_filename": "big-2-0-32.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "RELOJES",
+    "name": "T900PROMAX",
+    "reference": "",
+    "slug": "t900promax",
+    "image_filename": "t900promax-33.jpg",
+    "description": "Reloj de pared moderno con diseño elegante. Mecanismo de cuarzo silencioso de alta precisión."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "DRILL DE UÑAS",
+    "reference": "",
+    "slug": "drill-de-unas",
+    "image_filename": "drill-de-unas-35.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "DRILL DE UÑAS",
+    "reference": "",
+    "slug": "drill-de-unas",
+    "image_filename": "drill-de-unas-36.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "DRILL DE UÑAS",
+    "reference": "",
+    "slug": "drill-de-unas",
+    "image_filename": "drill-de-unas-37.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "DRILL DE UÑAS",
+    "reference": "",
+    "slug": "drill-de-unas",
+    "image_filename": "drill-de-unas-38.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "LAMPARA DE UÑAS 72 W",
+    "reference": "",
+    "slug": "lampara-de-unas-72-w",
+    "image_filename": "lampara-de-unas-72-w-39.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "LAMPARA DE UÑAS LUNA",
+    "reference": "",
+    "slug": "lampara-de-unas-luna",
+    "image_filename": "lampara-de-unas-luna-40.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "LAMPARA DE UÑAS",
+    "reference": "",
+    "slug": "lampara-de-unas",
+    "image_filename": "lampara-de-unas-41.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "LAMPARA DE UÑAS",
+    "reference": "",
+    "slug": "lampara-de-unas",
+    "image_filename": "lampara-de-unas-42.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "LAMPARA DE UÑAS 268 W",
+    "reference": "",
+    "slug": "lampara-de-unas-268-w",
+    "image_filename": "lampara-de-unas-268-w-43.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "SECADOR VERDE",
+    "reference": "",
+    "slug": "secador-verde",
+    "image_filename": "secador-verde-44.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "SECADOR NUEVO",
+    "reference": "",
+    "slug": "secador-nuevo",
+    "image_filename": "secador-nuevo-45.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "SECADOR NEGRO",
+    "reference": "",
+    "slug": "secador-negro",
+    "image_filename": "secador-negro-46.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "SECADOR CEPILLO",
+    "reference": "",
+    "slug": "secador-cepillo",
+    "image_filename": "secador-cepillo-47.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "DUO",
+    "reference": "",
+    "slug": "duo",
+    "image_filename": "duo-48.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "PINZA DE ONDAS",
+    "reference": "",
+    "slug": "pinza-de-ondas",
+    "image_filename": "pinza-de-ondas-49.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "PINZA DE CORONA",
+    "reference": "",
+    "slug": "pinza-de-corona",
+    "image_filename": "pinza-de-corona-50.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "PINZA DE ONDAS",
+    "reference": "",
+    "slug": "pinza-de-ondas",
+    "image_filename": "pinza-de-ondas-51.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "PEINETA DE CALOR",
+    "reference": "",
+    "slug": "peineta-de-calor",
+    "image_filename": "peineta-de-calor-52.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "CALLOS ROSADA",
+    "reference": "",
+    "slug": "callos-rosada",
+    "image_filename": "callos-rosada-53.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "CALLOS BLANCA",
+    "reference": "",
+    "slug": "callos-blanca",
+    "image_filename": "callos-blanca-54.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "BELLEZA",
+    "name": "CEPILLO FACIAL",
+    "reference": "",
+    "slug": "cepillo-facial",
+    "image_filename": "cepillo-facial-55.jpg",
+    "description": "Herramienta profesional para el cuidado del cabello y la belleza. Resultados de salón en casa."
+  },
+  {
+    "category": "HOGAR",
+    "name": "ORAL IRRIGATOR",
+    "reference": "",
+    "slug": "oral-irrigator",
+    "image_filename": "oral-irrigator-57.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CEPILLO NIÑO",
+    "reference": "",
+    "slug": "cepillo-nino",
+    "image_filename": "cepillo-nino-58.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CEPILLO DE ADULTO",
+    "reference": "",
+    "slug": "cepillo-de-adulto",
+    "image_filename": "cepillo-de-adulto-59.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CEPILLO DE LAVAR",
+    "reference": "",
+    "slug": "cepillo-de-lavar",
+    "image_filename": "cepillo-de-lavar-60.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CEPILLO DE LOZA",
+    "reference": "",
+    "slug": "cepillo-de-loza",
+    "image_filename": "cepillo-de-loza-61.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "MOP GIRATORIO",
+    "reference": "",
+    "slug": "mop-giratorio",
+    "image_filename": "mop-giratorio-62.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "LIMPIADOR DE ESPEJOS",
+    "reference": "",
+    "slug": "limpiador-de-espejos",
+    "image_filename": "limpiador-de-espejos-63.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "MOTOSIERRA",
+    "reference": "",
+    "slug": "motosierra",
+    "image_filename": "motosierra-64.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "HIDROLAVADORA INALÁMBRICA",
+    "reference": "",
+    "slug": "hidrolavadora-inalambrica",
+    "image_filename": "hidrolavadora-inalambrica-65.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "ASPIRADORA GRANDE",
+    "reference": "",
+    "slug": "aspiradora-grande",
+    "image_filename": "aspiradora-grande-66.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "ASPIRADORA CAJA NARANJA",
+    "reference": "",
+    "slug": "aspiradora-caja-naranja",
+    "image_filename": "aspiradora-caja-naranja-67.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "ASPIRADORA CAJA AZUL",
+    "reference": "",
+    "slug": "aspiradora-caja-azul",
+    "image_filename": "aspiradora-caja-azul-68.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "ASPIRADORA CAJA VERDE",
+    "reference": "",
+    "slug": "aspiradora-caja-verde",
+    "image_filename": "aspiradora-caja-verde-69.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "PERCHERO DE ROPA",
+    "reference": "",
+    "slug": "perchero-de-ropa",
+    "image_filename": "perchero-de-ropa-70.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CORTINAS DE BAÑO",
+    "reference": "",
+    "slug": "cortinas-de-bano",
+    "image_filename": "cortinas-de-bano-71.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "HOGAR",
+    "name": "CANASTA DE TELA",
+    "reference": "",
+    "slug": "canasta-de-tela",
+    "image_filename": "canasta-de-tela-72.jpg",
+    "description": "Artículo de hogar de alta calidad para decorar y organizar tu espacio."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADOR GATO",
+    "reference": "",
+    "slug": "ventilador-gato",
+    "image_filename": "ventilador-gato-74.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VANTILADOR VERDE",
+    "reference": "",
+    "slug": "vantilador-verde",
+    "image_filename": "vantilador-verde-75.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADO BLANCO 1",
+    "reference": "",
+    "slug": "ventilado-blanco-1",
+    "image_filename": "ventilado-blanco-1-76.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADOR BLANCO 2",
+    "reference": "",
+    "slug": "ventilador-blanco-2",
+    "image_filename": "ventilador-blanco-2-77.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADOR BLANCO 3",
+    "reference": "",
+    "slug": "ventilador-blanco-3",
+    "image_filename": "ventilador-blanco-3-78.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADOR DOBLE BLANCO",
+    "reference": "",
+    "slug": "ventilador-doble-blanco",
+    "image_filename": "ventilador-doble-blanco-79.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "VENTILADORES",
+    "name": "VENTILADOR DOBLE GRIS",
+    "reference": "",
+    "slug": "ventilador-doble-gris",
+    "image_filename": "ventilador-doble-gris-80.jpg",
+    "description": "Ventilador de alto rendimiento con múltiples velocidades. Silencioso y eficiente."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "RUEDA",
+    "reference": "",
+    "slug": "rueda",
+    "image_filename": "rueda-82.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "SET DE BANDAS ELÁSTICAS",
+    "reference": "",
+    "slug": "set-de-bandas-elasticas",
+    "image_filename": "set-de-bandas-elasticas-83.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "RODILLERA VERDE",
+    "reference": "",
+    "slug": "rodillera-verde",
+    "image_filename": "rodillera-verde-84.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "RODILLERA AZUL",
+    "reference": "",
+    "slug": "rodillera-azul",
+    "image_filename": "rodillera-azul-85.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "RODILLERA CALOR",
+    "reference": "",
+    "slug": "rodillera-calor",
+    "image_filename": "rodillera-calor-86.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "MASAJEADOR 4 EN 1",
+    "reference": "",
+    "slug": "masajeador-4-en-1",
+    "image_filename": "masajeador-4-en-1-87.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "MASAJEADOR X12",
+    "reference": "",
+    "slug": "masajeador-x12",
+    "image_filename": "masajeador-x12-88.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "MASAJEADOR AZUL",
+    "reference": "",
+    "slug": "masajeador-azul",
+    "image_filename": "masajeador-azul-89.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "EJERCICIO",
+    "name": "MASAJEADOR",
+    "reference": "",
+    "slug": "masajeador",
+    "image_filename": "masajeador-90.jpg",
+    "description": "Equipo de ejercicio resistente para entrenar en casa. Diseño ergonómico y seguro."
+  },
+  {
+    "category": "MOSQUITOS",
+    "name": "MINI LINTERNA DE MOSQUITOS",
+    "reference": "",
+    "slug": "mini-linterna-de-mosquitos",
+    "image_filename": "mini-linterna-de-mosquitos-92.jpg",
+    "description": "Protección efectiva contra mosquitos y plagas. Fácil instalación."
+  },
+  {
+    "category": "MOSQUITOS",
+    "name": "LAMPARA DE MOSQUITOS",
+    "reference": "",
+    "slug": "lampara-de-mosquitos",
+    "image_filename": "lampara-de-mosquitos-93.jpg",
+    "description": "Protección efectiva contra mosquitos y plagas. Fácil instalación."
+  },
+  {
+    "category": "MOSQUITOS",
+    "name": "RAQUETA DE MOSQUITOS",
+    "reference": "",
+    "slug": "raqueta-de-mosquitos",
+    "image_filename": "raqueta-de-mosquitos-94.jpg",
+    "description": "Protección efectiva contra mosquitos y plagas. Fácil instalación."
+  },
+  {
+    "category": "MOSQUITOS",
+    "name": "RAQUETA DE MOSQUITOS",
+    "reference": "",
+    "slug": "raqueta-de-mosquitos",
+    "image_filename": "raqueta-de-mosquitos-95.jpg",
+    "description": "Protección efectiva contra mosquitos y plagas. Fácil instalación."
+  },
+  {
+    "category": "MOSQUITOS",
+    "name": "LAMPARA PARA MOSQUITOS",
+    "reference": "",
+    "slug": "lampara-para-mosquitos",
+    "image_filename": "lampara-para-mosquitos-96.jpg",
+    "description": "Protección efectiva contra mosquitos y plagas. Fácil instalación."
+  },
+  {
+    "category": "TERMOS",
+    "name": "TERMOS",
+    "reference": "",
+    "slug": "termos",
+    "image_filename": "termos-98.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "TERMOS",
+    "name": "TERMOS CHINOS",
+    "reference": "",
+    "slug": "termos-chinos",
+    "image_filename": "termos-chinos-99.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "TERMOS",
+    "name": "TERMOS NARANJA",
+    "reference": "",
+    "slug": "termos-naranja",
+    "image_filename": "termos-naranja-100.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "TERMOS",
+    "name": "TERMO AZUL",
+    "reference": "",
+    "slug": "termo-azul",
+    "image_filename": "termo-azul-101.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "TERMOS",
+    "name": "FUN",
+    "reference": "",
+    "slug": "fun",
+    "image_filename": "fun-102.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "TERMOS",
+    "name": "STANLY",
+    "reference": "",
+    "slug": "stanly",
+    "image_filename": "stanly-103.jpg",
+    "description": "Termo de acero inoxidable que mantiene la temperatura por horas. Libre de BPA."
+  },
+  {
+    "category": "LICUADORA",
+    "name": "LICUADORA TERMO CON TAPA",
+    "reference": "",
+    "slug": "licuadora-termo-con-tapa",
+    "image_filename": "licuadora-termo-con-tapa-105.jpg",
+    "description": "Licuadora de alta potencia para preparar batidos, sopas y salsas. Fácil de limpiar."
+  },
+  {
+    "category": "LICUADORA",
+    "name": "LICUADORA TERMO",
+    "reference": "",
+    "slug": "licuadora-termo",
+    "image_filename": "licuadora-termo-106.jpg",
+    "description": "Licuadora de alta potencia para preparar batidos, sopas y salsas. Fácil de limpiar."
+  },
+  {
+    "category": "LICUADORA",
+    "name": "VASO LICUADORA",
+    "reference": "",
+    "slug": "vaso-licuadora",
+    "image_filename": "vaso-licuadora-107.jpg",
+    "description": "Licuadora de alta potencia para preparar batidos, sopas y salsas. Fácil de limpiar."
+  },
+  {
+    "category": "PICATODO",
+    "name": "PICATODO CAJA VERDE",
+    "reference": "",
+    "slug": "picatodo-caja-verde",
+    "image_filename": "picatodo-caja-verde-109.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "PICATODO CAJA VERDE",
+    "reference": "",
+    "slug": "picatodo-caja-verde",
+    "image_filename": "picatodo-caja-verde-110.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "PICATODO BLANCO",
+    "reference": "",
+    "slug": "picatodo-blanco",
+    "image_filename": "picatodo-blanco-111.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "PICATODO ROSADO",
+    "reference": "",
+    "slug": "picatodo-rosado",
+    "image_filename": "picatodo-rosado-112.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "PICATODO DOBLE",
+    "reference": "",
+    "slug": "picatodo-doble",
+    "image_filename": "picatodo-doble-113.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "MANUAL",
+    "reference": "",
+    "slug": "manual",
+    "image_filename": "manual-114.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "PICATODO",
+    "name": "BATIDORA Y PICATODO",
+    "reference": "",
+    "slug": "batidora-y-picatodo",
+    "image_filename": "batidora-y-picatodo-115.jpg",
+    "description": "Picatodo multifuncional para cortar frutas, verduras y más en segundos."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOR VERDE",
+    "reference": "",
+    "slug": "rallador-verde",
+    "image_filename": "rallador-verde-117.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOR NUEVO",
+    "reference": "",
+    "slug": "rallador-nuevo",
+    "image_filename": "rallador-nuevo-118.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOE TRANSPARENTE",
+    "reference": "",
+    "slug": "ralladoe-transparente",
+    "image_filename": "ralladoe-transparente-119.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOR PLANO",
+    "reference": "",
+    "slug": "rallador-plano",
+    "image_filename": "rallador-plano-120.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOR REDONDO",
+    "reference": "",
+    "slug": "rallador-redondo",
+    "image_filename": "rallador-redondo-121.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "RALLADOR",
+    "name": "RALLADOR CUADRADO",
+    "reference": "",
+    "slug": "rallador-cuadrado",
+    "image_filename": "rallador-cuadrado-122.jpg",
+    "description": "Rallador multiusos de acero inoxidable. Ralla queso, zanahoria, limón y más."
+  },
+  {
+    "category": "MACHACADOR",
+    "name": "MACHACADOR NEGRO Y BLANCO",
+    "reference": "",
+    "slug": "machacador-negro-y-blanco",
+    "image_filename": "machacador-negro-y-blanco-124.jpg",
+    "description": "Machacador resistente para preparar purés, guacamole y más. Mango antideslizante."
+  },
+  {
+    "category": "MACHACADOR",
+    "name": "MACHACADOR GRIS",
+    "reference": "",
+    "slug": "machacador-gris",
+    "image_filename": "machacador-gris-125.jpg",
+    "description": "Machacador resistente para preparar purés, guacamole y más. Mango antideslizante."
+  },
+  {
+    "category": "MACHACADOR",
+    "name": "MACHACADOR BLANCO",
+    "reference": "",
+    "slug": "machacador-blanco",
+    "image_filename": "machacador-blanco-126.jpg",
+    "description": "Machacador resistente para preparar purés, guacamole y más. Mango antideslizante."
+  },
+  {
+    "category": "RECIPIENTE PLÁSTICO",
+    "name": "RECIPIENTE PLÁSTICO REDONDO",
+    "reference": "",
+    "slug": "recipiente-plastico-redondo",
+    "image_filename": "recipiente-plastico-redondo-128.jpg",
+    "description": "Recipiente plástico hermético para almacenar alimentos frescos por más tiempo."
+  },
+  {
+    "category": "RECIPIENTE PLÁSTICO",
+    "name": "RECIPIENTE PLÁSTICO CUADRADO PEQUEÑO",
+    "reference": "",
+    "slug": "recipiente-plastico-cuadrado-pequeno",
+    "image_filename": "recipiente-plastico-cuadrado-pequeno-129.jpg",
+    "description": "Recipiente plástico hermético para almacenar alimentos frescos por más tiempo."
+  },
+  {
+    "category": "RECIPIENTE PLÁSTICO",
+    "name": "RECIPIENTE PLÁSTICO CUADRADO GRANDE",
+    "reference": "",
+    "slug": "recipiente-plastico-cuadrado-grande",
+    "image_filename": "recipiente-plastico-cuadrado-grande-130.jpg",
+    "description": "Recipiente plástico hermético para almacenar alimentos frescos por más tiempo."
+  },
+  {
+    "category": "COCINA",
+    "name": "CORTADOR DE PAPA FRANCESA",
+    "reference": "",
+    "slug": "cortador-de-papa-francesa",
+    "image_filename": "cortador-de-papa-francesa-132.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "SET DE CUCHARAS",
+    "reference": "",
+    "slug": "set-de-cucharas",
+    "image_filename": "set-de-cucharas-133.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "SANDWICHERA",
+    "reference": "",
+    "slug": "sandwichera",
+    "image_filename": "sandwichera-134.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "SET TARROS ORGANIZADORES x5",
+    "reference": "",
+    "slug": "set-tarros-organizadores-x5",
+    "image_filename": "set-tarros-organizadores-x5-135.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "SET DE TARROS x7",
+    "reference": "",
+    "slug": "set-de-tarros-x7",
+    "image_filename": "set-de-tarros-x7-136.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "FUENTE DE CHOCOLATE",
+    "reference": "",
+    "slug": "fuente-de-chocolate",
+    "image_filename": "fuente-de-chocolate-137.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "MAQUINA TRITURADORA DE HIELO",
+    "reference": "",
+    "slug": "maquina-trituradora-de-hielo",
+    "image_filename": "maquina-trituradora-de-hielo-138.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "GRAMERA",
+    "reference": "",
+    "slug": "gramera",
+    "image_filename": "gramera-139.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "GRAMERA DIGITAL",
+    "reference": "",
+    "slug": "gramera-digital",
+    "image_filename": "gramera-digital-140.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "CEREAL X3",
+    "reference": "",
+    "slug": "cereal-x3",
+    "image_filename": "cereal-x3-141.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "CEREAL X2",
+    "reference": "",
+    "slug": "cereal-x2",
+    "image_filename": "cereal-x2-142.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "TARROS X12",
+    "reference": "",
+    "slug": "tarros-x12",
+    "image_filename": "tarros-x12-143.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "TARROS X18",
+    "reference": "",
+    "slug": "tarros-x18",
+    "image_filename": "tarros-x18-144.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "PORTA TRAPOS",
+    "reference": "",
+    "slug": "porta-trapos",
+    "image_filename": "",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "GRIFO DE AGUA",
+    "reference": "",
+    "slug": "grifo-de-agua",
+    "image_filename": "grifo-de-agua-146.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "FILTRO DE AGUA",
+    "reference": "",
+    "slug": "filtro-de-agua",
+    "image_filename": "filtro-de-agua-147.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "ESCURRIDOR",
+    "reference": "",
+    "slug": "escurridor",
+    "image_filename": "escurridor-148.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "COCINA",
+    "name": "ESCURRIDOR CON CAJÓN",
+    "reference": "",
+    "slug": "escurridor-con-cajon",
+    "image_filename": "escurridor-con-cajon-149.jpg",
+    "description": "Artículo de cocina de alta calidad para facilitar la preparación de tus comidas."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "BEBEDERO DE MASCOTAS AMARILLO",
+    "reference": "",
+    "slug": "bebedero-de-mascotas-amarillo",
+    "image_filename": "",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "BEBEDERO DE MASCOTAS VERDE",
+    "reference": "",
+    "slug": "bebedero-de-mascotas-verde",
+    "image_filename": "bebedero-de-mascotas-verde-152.jpg",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "TAZA LIMPIADORA DE MASCOTAS",
+    "reference": "",
+    "slug": "taza-limpiadora-de-mascotas",
+    "image_filename": "taza-limpiadora-de-mascotas-153.jpg",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "MALETINES PARA MASCOTAS",
+    "reference": "",
+    "slug": "maletines-para-mascotas",
+    "image_filename": "maletines-para-mascotas-154.jpg",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "CEPILLO PARA MASCOTAS",
+    "reference": "",
+    "slug": "cepillo-para-mascotas",
+    "image_filename": "cepillo-para-mascotas-155.jpg",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  },
+  {
+    "category": "MASCOTAS",
+    "name": "CEPILLO VAPOR",
+    "reference": "",
+    "slug": "cepillo-vapor",
+    "image_filename": "cepillo-vapor-156.jpg",
+    "description": "Accesorio para mascotas de alta durabilidad. Diseño cómodo y seguro para tu mascota."
+  }
+]
