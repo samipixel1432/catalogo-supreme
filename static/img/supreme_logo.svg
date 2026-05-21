@@ -1,16 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 820">
   <!-- Red box -->
   <rect x="30" y="130" width="1400" height="560" fill="#ED1C24"/>
-  <!-- Supreme text -->
+  <!-- Supreme text — forzado a caber dentro del box -->
   <text
     x="730"
-    y="535"
+    y="412"
     font-family="'Futura', 'Arial Black', Impact, sans-serif"
-    font-size="380"
+    font-size="320"
     font-weight="900"
     font-style="italic"
     fill="white"
     text-anchor="middle"
-    letter-spacing="-5"
+    dominant-baseline="central"
+    textLength="1260"
+    lengthAdjust="spacingAndGlyphs"
   >Supreme</text>
 </svg>
